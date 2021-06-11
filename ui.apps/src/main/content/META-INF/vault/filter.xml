@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/sunlife"/>
+    <filter root="/apps/foundation/components/form"/>
+    <filter root="/apps/cq/xssprotection"/>
+    <filter root="/apps/cq/personalization"/>
+    <filter root="/apps/cq/gui/components/authoring/editors/clientlibs/core/js/edit/ToolbarActions"/>
+    <filter root="/apps/sling/servlet/errorhandler" />
+</workspaceFilter>

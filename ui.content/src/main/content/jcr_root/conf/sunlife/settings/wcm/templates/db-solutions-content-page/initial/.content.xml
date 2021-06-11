@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/sunlife/settings/wcm/templates/db-solutions-content-page"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="sunlife/core/components/structure/base-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <experiencefragment
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sunlife/ca/components/content/experiencefragment"
+                fragmentPath="/content/experience-fragments/sunlife/external/ca/db_solutions/en/header/master"/>
+            <breadcrumb
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sunlife/ca/components/content/breadcrumb"
+                hideCurrent="false"
+                showHidden="false"
+                socialShareReqd="true"
+                startLevel="4">
+                <socialIcons
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="sunlife/core/components/content/icon-text"
+                    textIsRich="[true,true,true]"
+                    title="Share this:"
+                    titleLevel="none">
+                    <iconsText jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            icon="fa-facebook-square"
+                            link="javascript:void(0)"
+                            srText="Share this on Facebook"
+                            target="_self"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            icon="fa-twitter-square"
+                            link="javascript:void(0)"
+                            srText="Share this on Twitter"
+                            target="_self"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            icon="fa-linkedin-square"
+                            link="javascript:void(0)"
+                            srText="Share this on Linkedin"
+                            target="_self"/>
+                    </iconsText>
+                </socialIcons>
+            </breadcrumb>
+            <layout_container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sunlife/ca/components/content/layout-container"/>
+            <experiencefragment_1294391813
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sunlife/ca/components/content/experiencefragment"
+                fragmentPath="/content/experience-fragments/sunlife/external/ca/db_solutions/en/footer/master"/>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Page">
+    <advisorhub-sunlife-content-page/>
+    <advisorhub-sunlife-experience-fragment/>
+    <advisorhub-sunlife-home-page/>
+    <microsite-sunlife-content-page/>
+    <microsite-sunlife-experience-fragment/>
+    <ca-sunlife-blank-page/>
+    <ca-sunlife-home-page/>
+    <ca-sunlife-content-page/>
+    <ca-sunlife-experience-fragment/>
+    <sunlife-config/>
+    <slgi-home-page/>
+    <slgi-content-page/>
+    <slgi-experience-fragment/>
+    <slgi-dynamic-page/>
+    <signin-experience-fragment/>
+    <signin-content-page/>
+    <com-sunlife-home-page/>
+    <com-sunlife-content-page/>
+    <com-sunlife-experience-fragment/>
+    <source-experience-fragment/>
+    <source-content-page/>
+    <sunlife-source-home-page/>
+    <sunlife-source-blank-page/>
+    <asc-sunlife-home-page/>
+    <asc-sunlife-content-page/>
+    <asc-sunlife-experience-fragment/>
+    <slcm-home-page/>
+    <slcm-content-page/>
+    <slcm-experience-fragment/>
+    <workplace-benefits-home-page/>
+    <workplace-benefits-content-page/>
+    <workplace-benefits-experience-fragment/>
+    <db-solutions-home-page/>
+    <db-solutions-content-page/>
+    <db-solutions-experience-fragment/>
+    <salesforce-1/>
+	<sunlife-legacy-content-page/>
+	<sunlife-legacy-experience-fragment/>
+	<sunlife-slfas-content-page/>
+	<gif-fund-facts/>
+</jcr:root>
