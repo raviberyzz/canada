@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-	<filter root="/conf/sunlife-apac"/>	
-	<filter root="/conf/global/settings/workflow/models/dam/update_asset" />
-    <filter root="/conf/global/settings/dam/adminui-extension" />
-    <filter root="/conf/global/settings/dam/search" />
-    <filter root="/conf/sunlife">
-        <exclude pattern="/conf/sunlife/settings/wcm/segments(/.*)" />
+	<filter root="/conf/sunlife/settings/wcm/policies">
+        <include pattern="/conf/sunlife/settings/wcm/policies/sunlife/core/components/structure/base-page/policy_ca_clientlibs(.*)" />
+        <include pattern="/conf/sunlife/settings/wcm/policies/sunlife/ca(.*)" />
+        <include pattern="/conf/sunlife/settings/wcm/policies/wcm/foundation/components/responsivegrid/policy_sunlife_ca_.*" />
     </filter>
-	<filter root="/conf/sunlife-source">
-		<exclude pattern="/conf/sunlife-source/settings/wcm/segments(/.*)" />
-	</filter>
-    <filter root="/etc/map.dev.publish"/>
-    <filter root="/etc/map.sit.publish"/>
-    <filter root="/etc/map.stage.publish"/>
-    <filter root="/etc/map.prod.publish"/>
-    <filter root="/var/workflow/models/dam/update_asset"/>
-    <filter root="/content/sunlife-tools/akamai-purge"/>
-	<filter root="/content/sunlife-tools/email"/>
-	<filter root="/content/sunlife-tools/post-redirection"/>
-    <filter root="/content/sunlife-tools/dispatcher-flush-utility"/>
-	<filter root="/content/sunlife-tools/user-info"/>
-	<filter root="/content/sunlife-tools/advisorhub-user-info"/>
-
-    <!-- launcher and workflow for workplace benefits drug list -->
-    <filter root="/conf/global/settings/workflow/launcher/config/1423903076"/>
-	<filter root="/conf/global/settings/workflow/launcher/config/1318494610"/>
-    <filter root="/conf/global/settings/workflow/models/workplace-benefits-drug-list-update"/>
-	<filter root="/conf/global/settings/workflow/models/workplace-benefits-chess-list-update"/>
-    <filter root="/var/workflow/models/workplace-benefits-drug-list-update"/>
-	<filter root="/var/workflow/models/workplace-benefits-chess-list-update"/>
-	<filter root="/conf/global/settings/workflow/models/sunhub-content-upload"/>
-    <filter root="/var/workflow/models/sunhub-content-upload"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-blank-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-home-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-content-page"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-experience-fragment"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/workplace-benefits-home-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/workplace-benefits-content-page"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/workplace-benefits-experience-fragment"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/db-solutions-home-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/db-solutions-content-page"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/db-solutions-experience-fragment"/>
 </workspaceFilter>
