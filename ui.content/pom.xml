@@ -57,6 +57,7 @@
                     <acHandling>merge_preserve</acHandling>
                     <group>sunlife</group>
                     <allowIndexDefinitions>true</allowIndexDefinitions>
+                    <failOnDuplicateEntries>false</failOnDuplicateEntries>
                     <!--  subPackages>
 			            <subPackage>
 			                <groupId>com.adobe.acs</groupId>
