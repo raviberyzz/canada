@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/sunlife/settings/wcm/policies/wcm/foundation/components/responsivegrid/policy_sunlife_ca_home"/>
+    <filter root="/conf/sunlife/settings/wcm/policies/wcm/foundation/components/responsivegrid/policy_sunlife_ca_content"/>
+    <filter root="/conf/sunlife/settings/wcm/policies/wcm/foundation/components/responsivegrid/policy_sunlife_ca_exp"/>
+    <filter root="/conf/sunlife/settings/wcm/policies/sunlife/core/components/structure/base-page/policy_ca_clientlibs"/>
+    <filter root="/conf/sunlife/settings/wcm/policies/sunlife/ca"/>
+    <filter root="/conf/sunlife/settings/wcm/policies/sunlife/core/components/structure/base-page/policy_signin_clientlibs"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/signin-experience-fragment"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/signin-content-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-blank-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-home-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-content-page"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/ca-sunlife-experience-fragment"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/workplace-benefits-home-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/workplace-benefits-content-page"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/workplace-benefits-experience-fragment"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/db-solutions-home-page"/>
+	<filter root="/conf/sunlife/settings/wcm/templates/db-solutions-content-page"/>
+    <filter root="/conf/sunlife/settings/wcm/templates/db-solutions-experience-fragment"/>
+</workspaceFilter>
