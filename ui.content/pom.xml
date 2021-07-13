@@ -83,23 +83,6 @@
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
-        <!-- <dependency>
-            <groupId>ca.sunlife.web.cms</groupId>
-            <artifactId>web-cms-aem-core.core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency> -->
-
-        <dependency>
-            <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-            <classifier>apis</classifier>
-        </dependency>
-        <!-- dependency>
-		    <groupId>com.adobe.acs</groupId>
-		    <artifactId>acs-aem-commons-content</artifactId>
-		    <version>4.3.4</version>
-		    <type>content-package</type>
-		</dependency -->
-
+       
     </dependencies>
 </project>
