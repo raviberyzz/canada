@@ -1846,6 +1846,29 @@
                             </cq:styleGroups>
                         </policy_signin>
                     </sign-in>
+                    <full-header jcr:primaryType="nt:unstructured">
+                        <policy_fullHeader
+                            jcr:lastModified="{Date}2021-07-19T16:59:43.859-04:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Full Header"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="Alternative Colour Theme"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="header-white-stripe"
+                                            cq:styleId="1626725560835"
+                                            cq:styleLabel="White Stripe"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                            </cq:styleGroups>
+                        </policy_fullHeader>
+                    </full-header>
                 </content>
                 <form jcr:primaryType="nt:unstructured">
                     <container jcr:primaryType="nt:unstructured">
