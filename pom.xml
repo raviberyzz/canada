@@ -728,6 +728,23 @@
 			</build>
 		</profile>
 
+    <profile>
+        <id>releaseCandidate</id>
+        <activation>
+             <activeByDefault>false</activeByDefault>
+        </activation>
+        <build>
+            <pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>3.0.0-M1</version>
+                    </plugin>
+               </plugins>
+           </pluginManagement>
+        </build>
+    </profile>
 	</profiles>
 
 
@@ -740,4 +757,9 @@
 		</dependencies>
 	</dependencyManagement>
 
+    <scm>
+        <developerConnection>scm:git:ssh://git@bitbucket.sunlifecorp.com/webcms/web-cms-aem-ca.git</developerConnection>
+        <url>ssh://git@bitbucket.sunlifecorp.com/webcms/web-cms-aem-ca.git</url>
+        <tag>@{project.version}</tag>
+    </scm>
 </project>
