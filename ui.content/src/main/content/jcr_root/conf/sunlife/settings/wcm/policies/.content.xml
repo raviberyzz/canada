@@ -1251,7 +1251,7 @@
                                             jcr:primaryType="nt:unstructured"/>
                                         <item5
                                             cq:styleClasses="light-orange-40"
-                                            cq:styleId="1644263729245"
+                                            cq:styleId="1584999220349"
                                             cq:styleLabel="40% Light orange"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
@@ -1262,7 +1262,7 @@
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
                                             cq:styleClasses="full-width-component"
-                                            cq:styleId="1644007107820"
+                                            cq:styleId="1644263729245"
                                             cq:styleLabel="Yes"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
