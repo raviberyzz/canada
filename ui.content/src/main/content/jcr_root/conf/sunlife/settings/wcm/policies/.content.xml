@@ -742,6 +742,17 @@
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
+                                <item1
+                                    cq:styleGroupLabel="Full Width Background"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="full-width-component title-wrapper-yellow-grey-rings"
+                                            cq:styleId="1645801476667"
+                                            cq:styleLabel="Yes"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
                             </cq:styleGroups>
                         </policy_titlebar>
                     </titlebar>
