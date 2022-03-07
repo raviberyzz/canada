@@ -9,6 +9,7 @@
 .header-white-stripe .slf-header-wrapper .desktop-header-wrapper .yellow-stripe {
     background-color: #FFFFFF;
 }
+
 /*display megamenu above other elements when hovered on*/
 .ca-sunlife-content-page .experiencefragment .layout-container.full-width-component {
     position: relative !important;
@@ -29,6 +30,8 @@
         .teaser.editorial-hero-banner,
         &.breadcrumb.breadcrumb-section.aem-GridColumn,
         &.titlebar.title.aem-GridColumn,
+        .titlebar.title,
+        &.titlebar.title,
         .stock-ticker-wrapper .share-performance,
         .container-component.content-highlight,
         .container-component.company-highlight-blue-grey-background,
@@ -302,7 +305,7 @@
         }
 
         
-        &.titlebar.title.title-wrapper-yellow-grey-rings {
+        &.titlebar.title.title-wrapper-yellow-grey-rings ,.titlebar.title.title-wrapper-yellow-grey-rings {
             background-position-x: 57vw;
         }
 
@@ -332,7 +335,7 @@
         [data-section="footer-bottom-layer"] .top-part,
         [data-section="footer-bottom-layer"] .bottom-part,
         &.breadcrumb.breadcrumb-section nav,
-        &.titlebar.title .cmp-title {
+        &.titlebar.title .cmp-title,.titlebar.title .cmp-title {
             display: block;
             max-width: 995px;
             margin: 0 auto;
