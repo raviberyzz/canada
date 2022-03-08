@@ -9,12 +9,6 @@
 .header-white-stripe .slf-header-wrapper .desktop-header-wrapper .yellow-stripe {
     background-color: #FFFFFF;
 }
-
-/*display megamenu above other elements when hovered on*/
-.ca-sunlife-content-page .experiencefragment .layout-container.full-width-component {
-    position: relative !important;
-    z-index: 9 !important;
-}
 //Adding Custom Styling for Full Width Components Toggle (Desktop Only)
 /* Header Regions Menu, Footer */
 @media (min-width: $desktop-screen-min) {
