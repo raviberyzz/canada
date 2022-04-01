@@ -1,3 +1,26 @@
 /*ca-search-component*/
 .CoveoTab.coveo-hidden{display:none}.CoveoTab>span.tab-count{height:100%;padding:0 2px}
 .coveo-tab-section{background-color:transparent !important;border-bottom:none !important}.CoveoTab{text-transform:none !important;color:#004c6c !important;font-weight:700 !important;padding:10px 50px 0px;font-size:16px !important;line-height:1.5rem !important}.CoveoTab.coveo-accessible-button{border:1px solid rgba(153,153,153,0.5)}.CoveoTab.coveo-accessible-button.coveo-selected{background:#eaab00}.CoveoTab.coveo-accessible-button.coveo-selected:hover{border-bottom:1px solid rgba(153,153,153,0.5)}.CoveoTab.coveo-accessible-button a:hover,.CoveoTab.coveo-accessible-button p:hover{text-decoration:underline}.CoveoTab.coveo-accessible-button:hover{border-bottom:1px solid rgba(153,153,153,0.5)}.CoveoTab *{line-height:normal !important}.tab-count{display:none !important}.coveo-pager-list-item.coveo-active.coveo-accessible-button{border:0px;background:#eaab00}.coveo-pager-list-item.coveo-active.coveo-accessible-button .coveo-pager-list-item-text.coveo-pager-anchor{color:#004c6c !important;font-weight:700}.coveo-pager-list-item{border:0px}.coveo-pager-list-item .coveo-pager-list-item-text.coveo-pager-anchor{color:#004c6c !important;font-weight:700}.coveo-pager-list-item:hover{background-color:#eee}.coveo-pager-list-item:hover,.coveo-pager-list-item:hover a{text-decoration:none !important}.CoveoResultLink{color:#4a7295;font-size:16px;font-weight:700}.printed-url{font-size:0.7em;color:#4a7295;font-weight:700}.search-result-num-results{font-size:1.125rem;color:#424242}.coveo-search-button,.coveo-search-button-loading{display:none !important}.CoveoSearchButton.coveo-accessible-button{margin-left:16px;background-color:#004c6c;min-height:48px;line-height:26px;min-width:fit-content;border-radius:4px;padding:6px 50px;text-align:center;cursor:pointer;border:0;font-weight:700;display:inline-block;text-decoration:none}.CoveoSearchButton.coveo-accessible-button .coveo-search-button-svg{color:#fff}.CoveoSearchButton.coveo-accessible-button:hover{background-color:#4a7283;color:#fff;text-decoration:none}.CoveoSearchbox .magic-box{color:#424242 !important;border-color:#d7d7d7 !important}.coveo-list-layout.CoveoResult{padding:0px !important}.P1Ycoe{display:none}@media (max-width: 800px){.CoveoResultList{margin-left:0px !important;margin-right:0px !important}.coveo-tab-section{overflow-x:auto;-webkit-user-select:none;-webkit-overflow-scrolling:touch}.CoveoTab{width:100px;padding:10px 0px 0px}.P1Ycoe{background:linear-gradient(to right, #fff, rgba(255,255,255,0.301961), #fff);height:40px;position:absolute;pointer-events:none;right:0;top:95px;width:15px;z-index:2;display:block}.P1Ycoe{position:absolute;width:3%;height:100%;right:0;top:0;pointer-events:none;background:linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 100%)}.CoveoSearchButton.coveo-accessible-button{padding:6px 25px}}
+#search-box-mobile .CoveoSearchbox .magic-box {
+    border:none;
+}
+#search-box-mobile .magic-box .magic-box-input {
+    background:none;
+}
+#search-box-mobile .CoveoSearchbox .magic-box .magic-box-input>input {
+    position: absolute;
+    margin-left: 5px;
+    padding: 2px 0 0 0;
+    height: 26px !important;
+    width: 216px;
+    line-height: 26px;
+    outline: 0;
+    border-bottom: 1px solid #d7d7d7;
+}
+#search-box-mobile .magic-box .magic-box-clear {
+    line-height: 25px;
+    background:none;
+}
+#search-box-mobile .CoveoSearchbox .magic-box .magic-box-clear-svg{
+    width: 12px;
+}
