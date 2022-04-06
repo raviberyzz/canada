@@ -1,0 +1,24 @@
+/*search-custom*/
+#search-box-mobile .CoveoSearchbox .magic-box {
+    border:none;
+}
+#search-box-mobile .magic-box .magic-box-input {
+    background:none;
+}
+#search-box-mobile .CoveoSearchbox .magic-box .magic-box-input>input {
+    position: absolute;
+    margin-left: 5px;
+    padding: 2px 0 0 0;
+    height: 26px !important;
+    width: 216px;
+    line-height: 26px;
+    outline: 0;
+    border-bottom: 1px solid #d7d7d7;
+}
+#search-box-mobile .magic-box .magic-box-clear {
+    line-height: 25px;
+    background:none;
+}
+#search-box-mobile .CoveoSearchbox .magic-box .magic-box-clear-svg{
+    width: 12px;
+}
