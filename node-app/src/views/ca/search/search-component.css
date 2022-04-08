@@ -1,13 +1,20 @@
 /*search-component*/
-.coveo-tab-section {
+#search-result-filters {
+    max-width: 1175px;
+    margin: 0 15px;
+    justify-content: left;
+    position: relative;
+  }
+  #search-result-filters .coveo-tab-section {
     background-color: transparent !important;
     border-bottom: none !important;
+    text-align: justify;
   }
   .CoveoTab {
     text-transform: none !important;
     color: #004c6c !important;
     font-weight: 700 !important;
-    padding: 10px 50px 0px;
+    padding: 13px 40px 0px;
     font-size: 16px !important;
     line-height: 1.5rem !important;
   }
@@ -115,10 +122,11 @@
       overflow-x: auto;
       -webkit-user-select: none;
       -webkit-overflow-scrolling: touch;
+      margin: 0 auto;
+      justify-content: left;
     }
     .CoveoTab {
-      width: 100px;
-      padding: 10px 0px 0px;
+      padding: 13px 40px 0px;
     }
     .P1Ycoe {
       background: linear-gradient(to right, #fff, #ffffff4d, #fff);
@@ -147,6 +155,13 @@
   @media (max-width: 480px) {
     .CoveoSearchInterface .CoveoSearchbox {
       margin-right: 0px !important;
+    }
+    #search-result-filters {
+      margin: 0 auto;
+    }
+    .CoveoTab {
+      height: 40px;
+      padding-top: 7px;
     }
   }
   
