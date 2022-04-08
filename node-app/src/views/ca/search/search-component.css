@@ -1,5 +1,12 @@
 /*search-component*/
-#search-result-filters {
+  .CoveoTab.coveo-hidden {
+    display: none;
+  }
+  .CoveoTab > span.tab-count {
+    height: 100%;
+    padding: 0 2px;
+  }
+  #search-result-filters {
     max-width: 1175px;
     margin: 0 15px;
     justify-content: left;
@@ -164,4 +171,3 @@
       padding-top: 7px;
     }
   }
-  
