@@ -448,11 +448,20 @@ var SunlifeSearch = /** @class */ (function (_super) {
         _this.options = options;
         _this.bindings = bindings;
         _this.options = coveo_search_ui_1.ComponentOptions.initComponentOptions(element, SunlifeSearch_1, options);
+        SunlifeSearch_1.languageMap.set('fr', 'French');
+        SunlifeSearch_1.languageMap.set('en', 'English');
+        _this.bind.onRootElement(coveo_search_ui_1.QueryEvents.doneBuildingQuery, function (args) { return _this.updateContext(args); });
         _this.bind.onRootElement(coveo_search_ui_1.QueryEvents.buildingQuery, function (args) { return _this.shouldResetTab(args); });
         _this.bind.onRootElement(coveo_search_ui_1.QueryEvents.querySuccess, function (args) { return _this.updateQuery(args); });
         return _this;
     }
     SunlifeSearch_1 = SunlifeSearch;
+    SunlifeSearch.prototype.updateContext = function (args) {
+        args.queryBuilder.context = {
+            userlocale: args.queryBuilder.locale,
+            userlanguage: SunlifeSearch_1.languageMap.get(args.queryBuilder.locale),
+        };
+    };
     SunlifeSearch.prototype.shouldResetTab = function (args) {
         var query = Coveo.state(this.element, "q");
         if (SunlifeSearch_1.previousQuery !== null && SunlifeSearch_1.previousQuery !== query) {
@@ -470,6 +479,7 @@ var SunlifeSearch = /** @class */ (function (_super) {
     SunlifeSearch.ID = 'SunlifeSearch';
     SunlifeSearch.options = {};
     SunlifeSearch.previousQuery = null;
+    SunlifeSearch.languageMap = new Map();
     SunlifeSearch = SunlifeSearch_1 = __decorate([
         turbo_core_1.lazyComponent
     ], SunlifeSearch);
