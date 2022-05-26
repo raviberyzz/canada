@@ -78,33 +78,37 @@
                                             tag="p"/>
                                         <item1
                                             jcr:primaryType="nt:unstructured"
+                                            description="Heading 1"
+                                            tag="h1"/>
+                                        <item2
+                                            jcr:primaryType="nt:unstructured"
                                             description="Heading 2"
                                             tag="h2"/>
-                                        <item2
+                                        <item3
                                             jcr:primaryType="nt:unstructured"
                                             description="Heading 3"
                                             tag="h3"/>
-                                        <item3
+                                        <item4
                                             jcr:primaryType="nt:unstructured"
                                             description="Heading 4"
                                             tag="h4"/>
-                                        <item4
+                                        <item5
                                             jcr:primaryType="nt:unstructured"
                                             description="Heading 5"
                                             tag="h5"/>
-                                        <item5
+                                        <item6
                                             jcr:primaryType="nt:unstructured"
                                             description="Heading 6"
                                             tag="h6"/>
-                                        <item6
+                                        <item7
                                             jcr:primaryType="nt:unstructured"
                                             description="Quote"
                                             tag="blockquote"/>
-                                        <item7
+                                        <item8
                                             jcr:primaryType="nt:unstructured"
                                             description="Horizontal Rule (visual line break)"
                                             tag="hr"/>
-                                        <item8
+                                        <item9
                                             jcr:primaryType="nt:unstructured"
                                             description="Preformatted"
                                             tag="pre"/>
