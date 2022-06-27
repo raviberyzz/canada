@@ -746,8 +746,7 @@
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
-                                <!-- Commenting out to keep full-width option out of PROD until BUs are aligned for deployment styleId must be double checked when reimplementing-->
-                                <!-- <item1
+                                <item1
                                     cq:styleGroupLabel="Full Width Background"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
@@ -757,7 +756,7 @@
                                             cq:styleLabel="Yes"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
-                                </item1> -->
+                                </item1>
                             </cq:styleGroups>
                         </policy_titlebar>
                     </titlebar>
@@ -854,8 +853,7 @@
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
-                                <!-- Commenting out to keep full-width option out of PROD until BUs are aligned for deployment styleId must be double checked when reimplementing-->
-                                <!-- <item1
+                                <item1
                                     cq:styleGroupLabel="Full Width Background"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
@@ -865,7 +863,7 @@
                                             cq:styleLabel="Yes"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
-                                </item1> -->
+                                </item1>
                             </cq:styleGroups>
                         </policy_breadcrumb>
                     </breadcrumb>
@@ -1295,8 +1293,7 @@
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item4>
-                                <!-- Commenting out to keep full-width option out of PROD until BUs are aligned for deployment styleId must be double checked when reimplementing-->
-                                <!-- <item5
+                                <item5
                                     cq:styleGroupLabel="Full Width Background"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
@@ -1306,7 +1303,7 @@
                                             cq:styleLabel="Yes"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
-                                </item5> -->
+                                </item5>
                             </cq:styleGroups>
                         </policy_layoutContainer>
                     </layout-container>
