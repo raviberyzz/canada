@@ -708,6 +708,11 @@
                                             cq:styleId="1596024605258"
                                             cq:styleLabel="No Mobile Image"
                                             jcr:primaryType="nt:unstructured"/>
+										<item1
+                                            cq:styleClasses="show-mobile-image"
+                                            cq:styleId="1654164884355"
+                                            cq:styleLabel="Show Mobile Image"
+                                            jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item13>
                                 <item14
