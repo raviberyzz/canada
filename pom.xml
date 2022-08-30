@@ -11,7 +11,7 @@
 	<groupId>ca.sunlife.web.cms</groupId>
 	<artifactId>web-cms-aem-ca</artifactId>
 	<packaging>pom</packaging>
-	<version>2.1.1-SNAPSHOT</version>
+	<version>2.1.1</version>
 	<description>AEM CMS application module</description>
 
 	<modules>
@@ -760,6 +760,6 @@
     <scm>
         <developerConnection>scm:git:ssh://git@bitbucket.sunlifecorp.com/webcms/web-cms-aem-ca.git</developerConnection>
         <url>ssh://git@bitbucket.sunlifecorp.com/webcms/web-cms-aem-ca.git</url>
-        <tag>@{project.version}</tag>
+        <tag>web-cms-aem-ca-2.1.1</tag>
     </scm>
 </project>
