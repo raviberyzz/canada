@@ -1894,6 +1894,11 @@
                                             cq:styleId="1594797946814"
                                             cq:styleLabel="Neutral"
                                             jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="bg-white"
+                                            cq:styleId="1659666546053"
+                                            cq:styleLabel="White"
+                                            jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
                             </cq:styleGroups>
