@@ -20,6 +20,7 @@
         /* Full Width Component Expansion for Selected Components */
         #mainfooter,
         .full-header .desktop-header-wrapper .yellow-stripe,
+        .full-header .desktop-header-wrapper .search-bar-wrapper,
         .full-header .desktop-header-wrapper .desktop-region-bar,
         .teaser.editorial-hero-banner,
         &.breadcrumb.breadcrumb-section.aem-GridColumn,
@@ -316,7 +317,9 @@
         } 
 
         .layout-container.subscribe-main-content-wrapper .cmp-container,
-        &.layout-container.subscribe-main-content-wrapper .cmp-container {
+        &.layout-container.subscribe-main-content-wrapper .cmp-container,
+        .full-header .desktop-header-wrapper .search-bar-wrapper .close-div,
+        .full-header .desktop-header-wrapper .search-bar-wrapper .global-search {
             display: block;
             max-width: 993px;
             margin: 0 auto;
@@ -355,6 +358,23 @@
         /* Header Region Component Adjustments */
         .desktop-region-language-menu-wrapper {
             box-shadow: none;
+        }
+
+        /* Search bar in the header */
+        @media(min-width: $desktop-screen-min) {
+            .desktop-header-wrapper .desktop-search-bar {
+                position:relative;
+                z-index:1099;
+            }
+            .desktop-header-wrapper .desktop-search-bar .search-bar-wrapper .close-div {
+                left:calc(50vw + 498px - 15px);
+            }
+        }
+        
+        @media(min-width: $desktop-screen-min) and (min-width: $desktop-screen-max) {
+            .desktop-header-wrapper .desktop-search-bar .search-bar-wrapper .close-div {
+                left:calc(50vw + 517px - 15px);
+            }
         }
     }
 }
