@@ -1,0 +1,387 @@
+<header data-sly-use.listModel="ca.sunlife.web.cms.core.models.HeaderModel">
+  <sly data-sly-test.listFromNav="${listModel.listFromNav}" />
+  <sly data-sly-test.listFromSearch="${listModel.listFromSearch}" />
+  <sly data-sly-test.listFromRegion="${listModel.listFromRegion}" />
+  <sly data-sly-test.listFromMeganav="${listModel.listFromMeganav}" />
+  <sly data-sly-test.listFromSignin="${listModel.listFromSignin}" />
+  <sly data-sly-test.listFrom="${listModel.listFrom}" />
+
+  <sly data-sly-test.isSignInHeader="${listModel.isSignInHeader}" />
+  <sly data-sly-test.separator="${listModel.links.separator}" />
+  <sly data-sly-test.hideLogo="${listModel.links.hideLogo}" />
+  
+  <sly data-sly-test.signinTitle="${listModel.signinTitle}" />
+  <sly data-sly-test.searchTitle="${listModel.searchTitle}" />
+  <sly data-sly-test.searchUrl="${listModel.searchUrl}" />
+  <sly data-sly-test.regionTitle="${listModel.regionTitle}" />
+  <sly data-sly-test.text="${listModel.text}" />
+  <sly data-sly-test.searchPlaceholder="${listModel.searchPlaceholder}" />
+  <sly data-sly-test.searchButton="${listModel.searchButton}" />
+  <sly data-sly-test.buttonTarget="#${listModel.signinUrl}" />
+  
+
+  <div class="slf-header-wrapper">
+    <div data-sly-test="${listFromSignin == 'signintrue' && listModel.signinTarget == 'modal'}" class="desktop-sign-in">
+      <div class="modal fade sign-in-modal-wrapper" data-section="${listModel.signinAnalyticsId}" id="${listModel.signinUrl}" role="dialog">
+        <div class="modal-dialog sign-in-modaldialog">
+          ${text @context ='unsafe'}
+        </div>
+      </div>
+    </div>
+    <div class="desktop-header-wrapper">
+      <div data-sly-test="${listFromSearch == 'searchtrue'}" class="desktop-search-bar">
+        <div class="search-bar-wrapper collapse" data-section="header-search" id="sun-search">
+          <div class="search-box">
+            <div class="close-div"><a data-toggle="collapse" aria-expanded="true" href="#sun-search"> <span
+                  class="sr-only">Close search</span> <span class="fa fa-remove collapse-x">&nbsp;</span>
+              </a></div>
+            <div class="global-search">
+			 <sly data-sly-test="${searchPlaceholder == 'coveoSearch'}">
+				<div id="search-box-desktop" data-enable-history="true" data-auto-trigger-query='false'>
+				  <div class="CoveoAnalytics"></div>
+					<div class="coveo-search-section">
+					<div class="CoveoSearchbox" data-placeholder="Search" data-enable-omnibox="true"></div>
+              <div class="input-wrapper coveo-desktop-error-hidden">
+                <ul role="alert" class="coveo-search-error">
+                  <li class="error-required">${searchButton}</li>
+                </ul>
+              </div>
+				  </div>
+				</div>	
+			 </sly>
+			<sly data-sly-test="${searchPlaceholder != 'coveoSearch'}">
+              <form name="searchform-bottom" class="slf-search" action="${searchUrl @ extension = 'html'}"
+                method="get" data-parsley-validate="data-parsley-validate"><label class="sr-only" for="q-top">Search</label>
+                <div class="form-wrapper">
+                  <div class="input-wrapper">
+                    <div class="input-wrapper form-group-wrapper">
+                      <input data-parsley-required-message="! Please enter a search term" data-parsley-required="data-parsley-required" id=q-top class="" label="" name="q"
+                        type="text" placeholder="${searchPlaceholder}"
+                        data-parsley-id="8">
+                    </div>
+                    <div class="search-autocomplete">
+                      <ul class="search-autocomplete-list">
+                        <li>&nbsp;</li>
+                      </ul>
+                      <ul class="search-sayt-list" data-section="type-ahead-html-listing">
+                        <div class="seperate horizontal-middle-align">
+                          <li>&nbsp;</li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="button-wrapper primary-blue-button-form">
+                    <button class="cmp-form-button" type="submit" value="${searchButton}">${searchButton}</button>
+                  </div>
+                </div>
+                <input name="action" type="hidden" value="input" />
+              </form>
+		   </sly>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="desktop-region-bar collapse" id="sun-language">
+        <sly data-sly-test="${listFromRegion == 'regiontrue'}"
+          data-sly-resource="${ @resourceType='sunlife/core/components/content/experiencefragment'}" />
+      </div>
+      <!-- Desktop skip links start-->
+      <div class="skip-to-wrapper">
+        <sly data-sly-test="${listFromSignin == 'signintrue'}">
+          <a href="${'/conf/sunlife/settings/wcm/templates/signin' in pageProperties.cq:template ? '#slfSignIn' : '#signinbutton'}"
+            class="skip-to sr-only kbfocus sr-only-focusable">${listModel.skipToSignInLabel}</a>
+        </sly>
+        <a href="#main-content"
+          class="skip-to sr-only kbfocus sr-only-focusable">${listModel.skipToMainContentLabel}</a>
+        <a href="#mainfooter"
+          class="skip-to sr-only kbfocus sr-only-focusable">${listModel.skipToFooterLabel}</a>
+      </div>
+      <!-- Desktop skip links end-->
+      <div class="col-xs-12 yellow-stripe">
+      </div>
+      <div class="col-xs-12 desktop-header-content ${isSignInHeader == 'yes' ? 'header-signIn' : ''} ">
+
+        <div class="col-xs-12 desktop-utility-nav">
+          <!-- Sign In Header Changes Starts -->
+		  <sly data-sly-test="${isSignInHeader == 'yes'}" >
+			<div class="col-md-6 col-lg-6">
+				<div data-sly-test="${listFrom == 'yes'}" class="desktop-sunlife-logo" data-section="header-logo" >
+					<sly data-sly-list.links="${listModel.links}">
+            <sly data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
+						  <a href="${utilityListParsing.navPath}" class="${links.separator == 'yes' ? 'logo-separator' : ''}">
+							  <img alt="${links.altText}" src="${links.logoImage}">
+              </a>
+            </sly>
+					</sly>
+				</div>
+			</div>
+          </sly>
+		  <sly data-sly-test="${!isSignInHeader || isSignInHeader == 'no'}" >
+			  <div class="col-md-3 col-lg-3">
+				  <div data-sly-test="${listFrom == 'yes'}" class="desktop-sunlife-logo" data-section="header-logo" >
+					<sly data-sly-list.links="${listModel.links}">
+            <sly data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
+					    <a href="${utilityListParsing.navPath}">
+						    <img alt="${links.altText}" src="${links.logoImage}">
+              </a>
+            </sly>
+					</sly>
+				  </div>
+			  </div>
+		  </sly>
+		  <!-- Sign In Header Changes Ends -->
+		  
+		  <!-- Sign In Header Changes Starts -->
+		  <sly data-sly-test="${isSignInHeader == 'yes'}" >
+			<div class="col-md-6 col-lg-6">
+          
+				<div class="utility-nav-wrapper" data-section="header-utility-nav">
+				<div data-sly-test="${listFromNav == 'true'}" class="utility-nav-links" role="navigation" aria-label="Helpful links">
+				  <ul>
+					<sly data-sly-list.links="${listModel.navlinks}">
+					  <li data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
+						<a href="${utilityListParsing.navPath}" data-title="${links.dataTitle}">${links.linkName} <i data-sly-test="${links.linkIcon}" class="${links.linkIcon}"></i></a>
+					  </li>
+					</sly>
+				  </ul>
+				</div>
+				<div data-sly-test="${listFromSearch == 'searchtrue' || listFromRegion == 'regiontrue'}" class="utility-nav-links" role="navigation" aria-label="Region & Language Selection, Search Function">
+				  <ul>
+					<li data-sly-test="${listFromRegion == 'regiontrue'}" id="language-btn-container">
+					  <div class="lang-btn" id="language-btn" role="button" data-toggle="collapse"
+						data-target="#sun-language" aria-controls="sun-language"  aria-expanded="false" tabindex="0">
+						<label class="sr-only">
+						  ${listModel.srRegionText}
+						</label>
+						${regionTitle}
+					  </div>
+					</li>
+					<li data-sly-test="${listFromSearch == 'searchtrue'}" class="search-icon-container">
+					  <div class="srch-btn" id="search-btn" data-target="#sun-search" data-toggle="collapse" role="button"
+						 aria-expanded="false" tabindex="0">
+						<a>${searchTitle}</a>
+					  </div>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+          
+          </div>
+          </sly>		  
+          
+		  <sly data-sly-test="${!isSignInHeader || isSignInHeader == 'no'}" >
+			  <div class="col-md-9 col-lg-9">
+			  
+				<div class="utility-nav-wrapper" data-section="header-utility-nav">
+				<div data-sly-test="${listFromNav == 'true'}" class="utility-nav-links" role="navigation" aria-label="Helpful links">
+				  <ul>
+					<sly data-sly-list.links="${listModel.navlinks}">
+					  <li data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
+						<a href="${utilityListParsing.navPath}" data-title="${links.dataTitle}">${links.linkName} <i data-sly-test="${links.linkIcon}" class="${links.linkIcon}"></i></a>
+					  </li>
+					</sly>
+				  </ul>
+				</div>
+				<div data-sly-test="${listFromSearch == 'searchtrue' || listFromRegion == 'regiontrue'}" class="utility-nav-links" role="navigation" aria-label="Region & Language Selection, Search Function">
+				  <ul>
+					<li data-sly-test="${listFromRegion == 'regiontrue'}" id="language-btn-container">
+					  <div class="lang-btn" id="language-btn" role="button" data-toggle="collapse"
+						data-target="#sun-language" aria-controls="sun-language"  aria-expanded="false" tabindex="0">
+						<label class="sr-only">
+						  ${listModel.srRegionText}
+						</label>
+						${regionTitle}
+					  </div>
+					</li>
+					<li data-sly-test="${listFromSearch == 'searchtrue'}" class="search-icon-container">
+					  <div class="srch-btn" id="search-btn" data-target="#sun-search" data-toggle="collapse" role="button"
+						 aria-expanded="false" tabindex="0">
+						<a>${searchTitle}</a>
+					  </div>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			  
+			  
+			  </div>
+		  </sly>
+		  <!-- Sign In Header Changes Ends -->
+          
+        
+        </div>
+        <div class="col-xs-12 desktop-sunlife-navigation">
+          
+          <div data-sly-test="${listFromMeganav == 'meganavtrue'}" class="desktop-navigation no-gutter">
+            <div class="desktop-mega-menu clearfix">
+              <div class="desktop-primary-navigation" data-section="nav-main" role="navigation" aria-label="main navigation">
+                <ul class="nav navbar-nav navbar-left navbar-new main-nav nav-auth focus-exp focus-tr">
+                  <sly data-sly-list.head="${listModel.meganavlinks.listChildren}">
+                    <li class="dropdown nav-item navigation ${head.linkStyle}" data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=head.linkUrl}">
+                      <a data-toggle="dropdown" class="dropdown-toggle subnav-trigger"
+                        href="${utilityListParsing.navPath}">
+                        <span
+                          class="nav-item-heading ">${head.linkName}</span></a>
+                      <div data-sly-test="${head.fragmentPath}" role="menu" class="dropdown-menu menu-content">
+                        <div class="mega-menu-wrapper-desk">
+
+                          <sly
+                            data-sly-resource="${head.path @resourceType='sunlife/core/components/content/experiencefragment'}" />
+
+                        </div>
+                      </div>
+                    </li>
+                  </sly>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div data-sly-test="${listFromSignin == 'signintrue'}" class="desktop-sign-button" id="${listModel.signinButtonId}" data-section="${listModel.signinAnalyticsId}">
+            <div class="signIn-button">
+              <sly data-sly-test.linkChecker = "${listModel.signinTarget == 'modal'}">
+                  <a href="javascript:void(0)" role="button" data-target="${buttonTarget}" data-toggle="modal"
+                class="CTA-wrapper">
+            </sly>
+             <sly data-sly-test = "${!linkChecker}">
+                <a role="button" href="${listModel.signinUrl}" target="${listModel.linkTarget}" class="CTA-wrapper">
+             </sly>
+                <span class="button-class"><span class="icon-class fa ${listModel.signinIcon}"></span>${signinTitle}</span>
+              </a>
+                <a data-sly-test="${properties.needGetStarted=='buttonrequired'}" id="${properties.getstartedbuttonid}" class="get-started-button ${properties.getstartedIcon}"
+                   data-title="${properties.datatitle}" data-section="${properties.getstartedanalyticsId}" href="${properties.getstartedurl}" target="${properties.getstartedlinktarget}" role="button">
+                    <span class="button-class get-started-button secondary-button-rte">${properties.buttonlabel}</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-header ${isSignInHeader == 'yes' ? 'mobile-header-signIn' : ''}">
+    <sly data-sly-test.isCampaignHeader = "${listModel.campaignHeader == 'true'}">
+    <div class="campaign-header-wrapper">
+    <div class="campaign-header">
+        <div class="slf-header-logo vertical-middle-align">
+        <sly data-sly-list.links="${listModel.links}">
+          <sly data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
+              <a class="logo" href="${utilityListParsing.navPath}">
+                  <img class="logo-img" alt="Sun Life" aria-label="Sun Life" src="${links.mobileLogoImage == null ? links.logoImage : links.mobileLogoImage }">
+              </a>
+            </sly>
+          </sly>
+        </div>
+    </div>
+  </div>
+   </sly>
+    
+    <sly data-sly-test = "${!isCampaignHeader}">
+      <div class="slf-mobile-header-wrapper">
+        <!-- sign-in modal start -->
+        <!-- sign-in modal end-->
+        <!-- Mobile skip links start-->
+        <div class="skip-to-wrapper">
+          <sly data-sly-test="${listFromSignin == 'signintrue'}">
+            <a href="#SignIn"
+              class="skip-to sr-only kbfocus sr-only-focusable">${listModel.skipToSignInLabel}</a>
+          </sly>
+          <a href="#main-content" class="skip-to sr-only kbfocus sr-only-focusable">
+            ${listModel.skipToMainContentLabel}</a>
+          <a href="#mainfooter" class="skip-to sr-only kbfocus sr-only-focusable">${listModel.skipToFooterLabel}</a>
+        </div>
+        <!-- Mobile skip links end-->
+        <div class="col-xs-12 mobile-header-navbar  white-shade">
+          <div class="hamburger-menu" id="hamburgerMenu">
+            <button class="btn navbar-toggle pull-left" type="button" aria-expanded="false">
+              <span class="sr-only">Navigation Menu</span>
+              <span class="icon-bar" id="a1">&nbsp;</span>
+              <span class="icon-bar" id="a2">&nbsp;</span>
+              <span class="icon-bar" id="a3">&nbsp;</span>
+            </button>
+          </div>
+          <div data-sly-test="${listFrom == 'yes'}" class="slf-header-mobile-logo" data-section="header-logo">
+            <sly data-sly-list.links="${listModel.links}">
+              <sly data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
+                <a href="${utilityListParsing.navPath}" class="${links.hideLogo == 'yes' ? 'hide-logo' : ''}">
+                  <img class="vertical-middle-align" alt="sunlife logo" src="${links.mobileLogoImage == null ? links.logoImage : links.mobileLogoImage }">
+                </a>
+              </sly>
+            </sly>
+          </div>
+          <div data-sly-test="${listFromSignin == 'signintrue'}" class="mobile-sign-in-box" id="SignIn"
+            data-toggle="${listModel.signinTarget == 'modal' ? 'modal' : ''}" data-target="${listModel.signinTarget == 'modal' ? buttonTarget : ''}" data-section="${listModel.signinAnalyticsId}">
+             <sly data-sly-test.mobilelinkChecker = "${listModel.signinTarget == 'modal'}">
+              <a data-toggle="modal" role="button" href="javascript:void(0)">
+             </sly>
+             <sly data-sly-test = "${!mobilelinkChecker}">
+              <a data-toggle="modal" role="button" href="${listModel.signinUrl}">
+              </sly> 
+              <span class="fa ${listModel.signinIcon} mobile-signin-icon">
+                <div class="mobile-signin-text">${listModel.signinMobileTitle ? listModel.signinMobileTitle : signinTitle}</div>
+              </span></a>
+          </div>
+        </div>
+        <!-- Mobile Header End-->
+        <!-- Hamburger Menu start -->
+        <div class="hamburger-menu-wrapper inactive">
+          <div class="close-hamburger-menu">
+          <button type="button" class="btn close-hamburger" id="close-hamburger">
+            <span class="sr-only">Close Navigation Menu</span>
+            <span class="fa fa-remove"></span>
+          </button>
+          </div>
+          <div data-sly-test="${listFromSearch == 'searchtrue'}" class="hamburger-search">
+			 <sly data-sly-test="${searchPlaceholder == 'coveoSearch'}">
+				<div id="search-box-mobile" data-enable-history="true" data-auto-trigger-query='false'>
+				  <div class="CoveoAnalytics"></div>
+					<div class="coveo-search-section">
+					<div class="CoveoSearchbox" data-placeholder="Search" data-add-search-button="false" data-enable-omnibox="true"></div>
+				  </div>
+          <div class="input-wrapper coveo-mobile-error-hidden">
+            <ul role="alert" class="coveo-search-error">
+              <li class="error-required">${searchButton}</li>
+            </ul>
+          </div>
+				</div>	
+			  </sly>
+			<sly data-sly-test="${searchPlaceholder != 'coveoSearch'}">		  
+            <form name="searchform-bottom" class="slf-search-mobile" action="${searchUrl @ extension = 'html'}"
+              method="get" data-parsley-validate="data-parsley-validate">
+              <div class="form-wrapper">
+                <div class="input-wrapper">
+                  <span class="fa fa-search search-icon-mobile" type="submit"></span>
+                  <input  data-parsley-required-message="! Please enter a search term" data-parsley-required="data-parsley-required" name="q" id="q-top-mobile" type="text" class="search-field" placeholder="${searchPlaceholder}"
+                    autocomplete="off" aria-label="mobile search bar" />
+                  <div class="search-autocomplete-mobile">
+                    <ul class="search-autocomplete-list-mobile" style="display: none;" aria-hidden="true">
+                    </ul>
+                    <ul class="search-sayt-list-mobile" style="display: none;" data-section="type-ahead-html-listing">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <input name="action" type="hidden" value="input">
+            </form>
+			</sly>
+          </div>
+          <ul class="first-level-navigation">
+
+            <sly data-sly-test="${listModel.mobilenav.path}" data-sly-resource="${listModel.mobilenav.path @resourceType='sunlife/core/components/content/experiencefragment'}" />
+
+            <li data-sly-test="${listFromRegion == 'regiontrue'}" class="navigation-menu language-region">
+              <a href="#">${regionTitle @context='html'}</a>
+              <div class="second-level-navigation" role="menu">
+
+                <sly data-sly-resource="${ @resourceType='sunlife/core/components/content/experiencefragment'}" />
+
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="offcanvas-overlay">
+        </div>
+        <!-- Hamburger Menu End -->
+
+      </div>
+    </sly>
+    </div>
+  </div>
+</header>

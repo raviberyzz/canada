@@ -1,0 +1,208 @@
+#signin-widget-modal .loading {
+  z-index: 1000;
+  position: absolute;
+  display: block;
+  margin-left: -30px; }
+
+.slf-header-wrapper .desktop-sign-in .button-class {
+  display: none;
+  font-size: 14px; }
+
+.slf-header-wrapper .desktop-header-wrapper {
+  height: 100px; }
+  .slf-header-wrapper .desktop-header-wrapper .yellow-stripe {
+    height: 8px;
+    background-color: #FFCB05;
+    padding: 0; }
+  .slf-header-wrapper .desktop-header-wrapper .desktop-header-content {
+    padding: 0 15px 18px 5px;
+    height: 92px;
+    /*Logo starts here*/
+    /*Logo end here*/
+    /*Utility Nav starts here*/
+    /* Utility Nav Ends here */ }
+    .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-logo {
+      float: left;
+      margin-top: -11px; }
+      .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-logo a {
+        position: relative;
+        top: 38px; }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-logo a:hover {
+          text-decoration: none; }
+      .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-logo img {
+        width: 149px;
+        height: 36px;
+        cursor: pointer; }
+    .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-utility-nav {
+      float: right;
+      padding: 0; }
+      .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-utility-nav .col-md-9.col-lg-9 {
+        padding: 0 !important; }
+      .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-utility-nav .utility-nav-wrapper {
+        padding: 0 0 8px 0; }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-utility-nav .utility-nav-wrapper .utility-nav-links .lang-btn {
+          padding: 0 14px; }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-utility-nav .utility-nav-wrapper .utility-nav-links .search-icon-container {
+          padding-right: 0; }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-utility-nav .utility-nav-wrapper .utility-nav-links ul a {
+          line-height: 18px; }
+    .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation {
+      padding: 0;
+      /*Mega Menu strats here*/ }
+      .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-navigation {
+        position: static;
+        float: left;
+        margin-left: 188px;
+        /*Mega Menu end here*/ }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-navigation .desktop-mega-menu .desktop-primary-navigation {
+          margin: -7px 0 0 21px; }
+          .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-navigation .desktop-mega-menu .desktop-primary-navigation .menu-content {
+            padding: 0;
+            border: 1px solid #F7F7F7; }
+          .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-navigation .desktop-mega-menu .desktop-primary-navigation .nav-item .dropdown-toggle .nav-item-heading {
+            line-height: 24px; }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-navigation .desktop-mega-menu .desktop-primary-navigation-yellow {
+          margin-left: 0px; }
+          .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-navigation .desktop-mega-menu .desktop-primary-navigation-yellow .menu-content {
+            padding: 0;
+            margin-top: -12px; }
+      .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-sign-button {
+        max-width: 375px;
+        float: right;
+        margin-top: 7px; }
+        .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-sign-button .signIn-button .button-class {
+          padding: 10px 16px !important; }
+  .slf-header-wrapper .desktop-header-wrapper .header-signIn .desktop-utility-nav .desktop-sunlife-logo .logo-separator img {
+    border-right: 2px solid #CECECE;
+    padding-right: 15px;
+    margin-right: 15px;
+    width: auto; }
+  .slf-header-wrapper .desktop-header-wrapper .header-signIn .desktop-sunlife-navigation .desktop-navigation {
+    margin-left: 500px; }
+
+.slf-header-wrapper .search-autocomplete {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  text-decoration: none; }
+  .slf-header-wrapper .search-autocomplete ul {
+    border: 1px solid #B4B4B4;
+    margin: -1px 0 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    vertical-align: middle;
+    min-height: 48px;
+    display: none; }
+  .slf-header-wrapper .search-autocomplete .search-autocomplete-list {
+    padding-left: 15px;
+    font-weight: 700; }
+    .slf-header-wrapper .search-autocomplete .search-autocomplete-list li .bold {
+      color: #000000; }
+  .slf-header-wrapper .search-autocomplete .search-sayt-list {
+    border-bottom: 1px solid #B4B4B4;
+    position: relative;
+    padding-top: 2px;
+    background: #ffffff;
+    margin-top: -2px; }
+    .slf-header-wrapper .search-autocomplete .search-sayt-list .seperate {
+      width: 90%;
+      border-top: 1px solid #000000; }
+    .slf-header-wrapper .search-autocomplete .search-sayt-list :hover {
+      text-decoration: none; }
+    .slf-header-wrapper .search-autocomplete .search-sayt-list li {
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 15px 10px;
+      white-space: nowrap;
+      overflow: hidden; }
+      .slf-header-wrapper .search-autocomplete .search-sayt-list li .title {
+        color: #4a7295;
+        display: block; }
+        .slf-header-wrapper .search-autocomplete .search-sayt-list li .title:hover {
+          text-decoration: underline; }
+      .slf-header-wrapper .search-autocomplete .search-sayt-list li .desc {
+        color: #424242;
+        font-size: 0.875rem;
+        font-weight: normal;
+        line-height: 1.2rem;
+        padding-bottom: 4px; }
+        .slf-header-wrapper .search-autocomplete .search-sayt-list li .desc :hover {
+          text-decoration: none; }
+      .slf-header-wrapper .search-autocomplete .search-sayt-list li a > * {
+        white-space: normal; }
+
+.slf-header-wrapper .slf-search .parsley-errors-list.filled {
+  z-index: 1; }
+
+.slf-header-wrapper .desktop-header-wrapper .header-signIn .desktop-utility-nav .desktop-sunlife-logo img {
+  width: auto; }
+
+.signin-content-page .desktop-primary-navigation .nav > li > a, .signin-home-page .desktop-primary-navigation .nav > li > a {
+  padding-top: 6px; }
+
+.signin-content-page .slf-header-wrapper .desktop-header-wrapper .desktop-sunlife-logo, .signin-home-page .slf-header-wrapper .desktop-header-wrapper .desktop-sunlife-logo {
+  width: 100%; }
+
+@media (max-width: 1024px) {
+  .hide-logo {
+    display: none; }
+  .desktop-header-wrapper {
+    display: none; }
+  .slf-header-wrapper .mobile-header .language-region .desktop-region-language-menu-wrapper {
+    display: none; }
+  .secondary-logo-wrapper {
+    text-align: center;
+    min-height: 50px;
+    background-color: #ffffff;
+    position: initial; }
+    .secondary-logo-wrapper img {
+      width: auto;
+      height: 30px;
+      margin: 30px 2px 0px 2px; }
+  .margin-top-fifty {
+    margin-top: 50px; } }
+
+@media (min-width: 1025px) {
+  .mobile-header {
+    display: none; }
+  .secondary-logo-wrapper {
+    display: none; } }
+
+@media (max-width: 767px) {
+  .desktop-header-content .desktop-sunlife-logo img {
+    margin-top: 0px; } }
+
+.panel-group {
+  display: none; }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .slf-header-wrapper .desktop-header-wrapper .desktop-header-content .desktop-sunlife-navigation .desktop-sign-button .signIn-button .button-class {
+    padding: 7px 16px !important; } }
+
+.get-started-button {
+    margin-left: 0.7rem;
+    background-color: transparent !important;
+}
+
+.get-started-button .button-class .secondary-button-rte {
+    padding: 5px 8px;
+    min-height: 8px;
+    min-width: 31px;
+}
+
+.desktop-sunlife-navigation {
+    display: flex;
+}
+
+.desktop-sunlife-navigation > .desktop-navigation {
+    flex: 1;
+}
+
+.get-started-button:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: 4px;
+}
+
