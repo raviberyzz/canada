@@ -636,7 +636,7 @@
                                                                 <items jcr:primaryType="nt:unstructured">
                                                                     <nocolor
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            text="White Background"
+                                                                            text="No Color"
                                                                             value="_blank"/>
                                                                 </items>
                                                             </getstartedstyle>
