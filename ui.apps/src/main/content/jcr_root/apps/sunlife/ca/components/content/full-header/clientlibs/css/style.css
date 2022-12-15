@@ -186,6 +186,11 @@
     margin-left: 0.3rem;
     background-color: transparent !important;
 }
+.signIn-button .button-class {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .get-started-button .button-class .secondary-button-rte {
     padding: 5px 8px;
