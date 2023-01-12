@@ -198,9 +198,9 @@
     min-width: 31px;
 }
 
-.desktop-sunlife-navigation {
+/*.desktop-sunlife-navigation {
     display: flex;
-}
+}*/
 
 .desktop-sunlife-navigation > .desktop-navigation {
     flex: 1;
