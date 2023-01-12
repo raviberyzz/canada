@@ -1,0 +1,566 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/src/index.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[2].use[4]!./src/main/webpack/prerequisite/base/styles/base.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Mfa modal styling starts here */
+/* Mfa modal styling ends here */
+/*alternative colour theme for yellow stripe*/
+.header-white-stripe .slf-header-wrapper .desktop-header-wrapper .yellow-stripe {
+  background-color: #FFFFFF;
+}
+
+/* Header Regions Menu, Footer */
+@media (min-width: 1025px) {
+  body {
+    overflow-x: hidden;
+  }
+  .full-width-component {
+    /* Full Width Component Expansion for Selected Components */
+    /* Full Width Teaser Components Image Extend (Home Page Hero, Landing Page Hero, Life Moment 2nd Level Banner */
+    /* Full Width - Layout Container - Overview Content Wrapper */
+    /* Margin Constrains for Footer Component, Header Layers Full Width */
+    /* Layout Container - Overview Content Wrapper (2 Column Variant) - Ensuring Columns are Properly Spaced*/
+    /* Layout Container - 2 Column Variant - 50/50% Flex Container - Investors/Careers COM Pages*/
+    /* Layout Container - Overview Content Wrapper (3 Column Variant) - Ensuring Columns are Properly Spaced */
+    /* Stock Ticker - Yellow Variant */
+    /* Full width Footer Adjustments */
+    /* Header Region Component Adjustments */
+    /* Search bar in the header */
+  }
+  .full-width-component #mainfooter,
+  .full-width-component .full-header .desktop-header-wrapper .yellow-stripe,
+  .full-width-component .full-header .desktop-header-wrapper .search-bar-wrapper,
+  .full-width-component .full-header .desktop-header-wrapper .desktop-region-bar,
+  .full-width-component .teaser.editorial-hero-banner, .full-width-component.breadcrumb.breadcrumb-section.aem-GridColumn, .full-width-component.titlebar.title.aem-GridColumn,
+  .full-width-component .titlebar.title, .full-width-component.titlebar.title,
+  .full-width-component .stock-ticker-wrapper .share-performance,
+  .full-width-component .container-component.content-highlight,
+  .full-width-component .container-component.company-highlight-blue-grey-background,
+  .full-width-component .container-component.company-highlight-yellow-grey-background,
+  .full-width-component .container-component.grey-background-box,
+  .full-width-component .container-component.light-orange-20,
+  .full-width-component .text.grey-background-box,
+  .full-width-component .text.yellow-gradient-box,
+  .full-width-component .text.light-orange-background-wrapper,
+  .full-width-component .layout-container.subscribe-main-content-wrapper,
+  .full-width-component .layout-container.medium-yellow,
+  .full-width-component .layout-container.light-grey,
+  .full-width-component .layout-container.light-grey-20,
+  .full-width-component .layout-container.light-cool-blue,
+  .full-width-component .layout-container.light-orange-20,
+  .full-width-component .layout-container.light-orange-40,
+  .full-width-component .layout-container.light-taupe-50-bg, .full-width-component.layout-container.subscribe-main-content-wrapper, .full-width-component.layout-container.medium-yellow, .full-width-component.layout-container.light-grey, .full-width-component.layout-container.light-grey-20, .full-width-component.layout-container.light-cool-blue, .full-width-component.layout-container.light-orange-20, .full-width-component.layout-container.light-orange-40, .full-width-component.layout-container.light-taupe-50-bg,
+  .full-width-component .link-list.editorial-nav-desktop-wrapper .lists-wrapper .links {
+    width: 100vw !important;
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .full-width-component .teaser.banner-section.home-page-hero-banner .desk-img,
+  .full-width-component .teaser.banner-section.landing-page-hero-banner .desk-img,
+  .full-width-component .teaser.banner-section.life-moment-second-level-banner .desk-img {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  .full-width-component .layout-container.overview-content-wrapper, .full-width-component.layout-container.overview-content-wrapper {
+    /* Used due to the Fractional Pixel issue with background gradient when using transform  */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .full-width-component .teaser.banner-section.yellow-border-bottom .right-image-position .desk-img,
+  .full-width-component .teaser.banner-section.yellow-border-bottom .left-image-position .desk-img {
+    border-bottom: 7px solid #D3980D;
+  }
+  .full-width-component .teaser.banner-section.yellow-border-bottom .right-image-position,
+  .full-width-component .teaser.banner-section.yellow-border-bottom .left-image-position {
+    border-bottom: none;
+  }
+  .full-width-component .teaser.banner-section.blue-border-bottom .right-image-position .desk-img,
+  .full-width-component .teaser.banner-section.blue-border-bottom .left-image-position .desk-img {
+    border-bottom: 7px solid #184A58;
+  }
+  .full-width-component .teaser.banner-section.blue-border-bottom .right-image-position,
+  .full-width-component .teaser.banner-section.blue-border-bottom .left-image-position {
+    border-bottom: none;
+  }
+  .full-width-component .teaser.banner-section.home-page-hero-banner.yellow-border-bottom .right-image-position .desk-img,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.yellow-border-bottom .left-image-position .desk-img,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.blue-border-bottom .right-image-position .desk-img,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.blue-border-bottom .left-image-position .desk-img {
+    height: 407px;
+  }
+  .full-width-component .teaser.banner-section.home-page-hero-banner.yellow-border-bottom .left-item.text-section,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.yellow-border-bottom .right-item.text-section,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.blue-border-bottom .left-item.text-section,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.blue-border-bottom .right-item.text-section {
+    margin-bottom: 7px;
+  }
+}
+@media (min-width: 1025px) and (-ms-high-contrast: none), (min-width: 1025px) and (-ms-high-contrast: active) {
+  .full-width-component .teaser.banner-section.home-page-hero-banner.yellow-border-bottom .left-item.text-section,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.yellow-border-bottom .right-item.text-section,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.blue-border-bottom .left-item.text-section,
+  .full-width-component .teaser.banner-section.home-page-hero-banner.blue-border-bottom .right-item.text-section {
+    margin-top: -3px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .teaser.banner-section.home-page-hero-banner .right-item.text-section,
+  .full-width-component .teaser.banner-section.landing-page-hero-banner .right-item.text-section,
+  .full-width-component .teaser.banner-section.life-moment-second-level-banner .right-item.text-section {
+    z-index: 1;
+  }
+  .full-width-component .teaser.banner-section.home-page-hero-banner .left-item.text-section,
+  .full-width-component .teaser.banner-section.landing-page-hero-banner .left-item.text-section,
+  .full-width-component .teaser.banner-section.life-moment-second-level-banner .left-item.text-section {
+    z-index: 1;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .teaser.editorial-hero-banner .side-image.desktop-image {
+    height: 384px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .teaser.editorial-hero-banner .side-image.desktop-image {
+    height: 398px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .teaser.editorial-hero-banner .left-item.text-section {
+    padding-left: calc(50% - 472px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .teaser.editorial-hero-banner .left-item.text-section {
+    padding-left: calc(50% - 532px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .teaser.editorial-hero-banner .right-item.text-section {
+    padding-right: calc(50% - 472px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .teaser.editorial-hero-banner .right-item.text-section {
+    padding-right: calc(50% - 532px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .link-list.editorial-nav-desktop-wrapper .lists-wrapper ul.list-unstyled {
+    padding-left: calc(50% - 496.5px);
+    padding-right: calc(50% - 496.5px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .link-list.editorial-nav-desktop-wrapper .lists-wrapper ul.list-unstyled {
+    padding-left: calc(50% - 516px);
+    padding-right: calc(50% - 516px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .row[data-section=footer-top-layer],
+  .full-width-component .row[data-section=footer-middle-layer],
+  .full-width-component .row[data-section=footer-bottom-layer],
+  .full-width-component .row[data-section=footer-custom-layer],
+  .full-width-component .full-header .desktop-header-wrapper .desktop-region-bar > .xf-content-height > .aem-Grid.aem-Grid--12,
+  .full-width-component .container-component.content-highlight .cmp-container,
+  .full-width-component .container-component.grey-background-box .cmp-container,
+  .full-width-component .container-component.light-orange-20 .cmp-container,
+  .full-width-component .text.grey-background-box .cmp-text,
+  .full-width-component .text.yellow-gradient-box .cmp-text,
+  .full-width-component .text.light-orange-background-wrapper .cmp-text,
+  .full-width-component .layout-container.medium-yellow .cmp-container,
+  .full-width-component .layout-container.light-grey .cmp-container,
+  .full-width-component .layout-container.light-grey-20 .cmp-container,
+  .full-width-component .layout-container.light-cool-blue .cmp-container,
+  .full-width-component .layout-container.light-orange-20 .cmp-container,
+  .full-width-component .layout-container.light-orange-40 .cmp-container,
+  .full-width-component .layout-container.light-taupe-50-bg .cmp-container, .full-width-component.layout-container.medium-yellow .cmp-container, .full-width-component.layout-container.light-grey .cmp-container, .full-width-component.layout-container.light-grey-20 .cmp-container, .full-width-component.layout-container.light-cool-blue .cmp-container, .full-width-component.layout-container.light-orange-20 .cmp-container, .full-width-component.layout-container.light-orange-40 .cmp-container, .full-width-component.layout-container.light-taupe-50-bg .cmp-container {
+    display: block;
+    max-width: 1025px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .row[data-section=footer-top-layer],
+  .full-width-component .row[data-section=footer-middle-layer],
+  .full-width-component .row[data-section=footer-bottom-layer],
+  .full-width-component .row[data-section=footer-custom-layer],
+  .full-width-component .full-header .desktop-header-wrapper .desktop-region-bar > .xf-content-height > .aem-Grid.aem-Grid--12,
+  .full-width-component .container-component.content-highlight .cmp-container,
+  .full-width-component .container-component.grey-background-box .cmp-container,
+  .full-width-component .container-component.light-orange-20 .cmp-container,
+  .full-width-component .text.grey-background-box .cmp-text,
+  .full-width-component .text.yellow-gradient-box .cmp-text,
+  .full-width-component .text.light-orange-background-wrapper .cmp-text,
+  .full-width-component .layout-container.medium-yellow .cmp-container,
+  .full-width-component .layout-container.light-grey .cmp-container,
+  .full-width-component .layout-container.light-grey-20 .cmp-container,
+  .full-width-component .layout-container.light-cool-blue .cmp-container,
+  .full-width-component .layout-container.light-orange-20 .cmp-container,
+  .full-width-component .layout-container.light-orange-40 .cmp-container,
+  .full-width-component .layout-container.light-taupe-50-bg .cmp-container, .full-width-component.layout-container.medium-yellow .cmp-container, .full-width-component.layout-container.light-grey .cmp-container, .full-width-component.layout-container.light-grey-20 .cmp-container, .full-width-component.layout-container.light-cool-blue .cmp-container, .full-width-component.layout-container.light-orange-20 .cmp-container, .full-width-component.layout-container.light-orange-40 .cmp-container, .full-width-component.layout-container.light-taupe-50-bg .cmp-container {
+    max-width: 1064px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .container-component.company-highlight-blue-grey-background .cmp-container,
+  .full-width-component .container-component.company-highlight-yellow-grey-background .cmp-container {
+    display: block;
+    max-width: 997px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .container-component.company-highlight-blue-grey-background .cmp-container,
+  .full-width-component .container-component.company-highlight-yellow-grey-background .cmp-container {
+    max-width: 1016px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-6:first-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-6:first-child .cmp-container {
+    padding-left: calc(100% - 512px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-6:first-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-6:first-child .cmp-container {
+    padding-left: calc(100% - 532px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.medium-yellow > .flex-height,
+  .full-width-component .layout-container.light-grey > .flex-height,
+  .full-width-component .layout-container.light-grey-20 > .flex-height,
+  .full-width-component .layout-container.light-cool-blue > .flex-height,
+  .full-width-component .layout-container.light-orange-20 > .flex-height,
+  .full-width-component .layout-container.light-orange-40 > .flex-height,
+  .full-width-component .layout-container.light-taupe-50-bg > .flex-height, .full-width-component.layout-container.medium-yellow > .flex-height, .full-width-component.layout-container.light-grey > .flex-height, .full-width-component.layout-container.light-grey-20 > .flex-height, .full-width-component.layout-container.light-cool-blue > .flex-height, .full-width-component.layout-container.light-orange-20 > .flex-height, .full-width-component.layout-container.light-orange-40 > .flex-height, .full-width-component.layout-container.light-taupe-50-bg > .flex-height {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .full-width-component .layout-container.medium-yellow > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-grey > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-grey-20 > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-cool-blue > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-orange-20 > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-orange-40 > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-taupe-50-bg > .flex-height .col-sm-6, .full-width-component.layout-container.medium-yellow > .flex-height .col-sm-6, .full-width-component.layout-container.light-grey > .flex-height .col-sm-6, .full-width-component.layout-container.light-grey-20 > .flex-height .col-sm-6, .full-width-component.layout-container.light-cool-blue > .flex-height .col-sm-6, .full-width-component.layout-container.light-orange-20 > .flex-height .col-sm-6, .full-width-component.layout-container.light-orange-40 > .flex-height .col-sm-6, .full-width-component.layout-container.light-taupe-50-bg > .flex-height .col-sm-6 {
+    max-width: 512.5px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .layout-container.medium-yellow > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-grey > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-grey-20 > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-cool-blue > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-orange-20 > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-orange-40 > .flex-height .col-sm-6,
+  .full-width-component .layout-container.light-taupe-50-bg > .flex-height .col-sm-6, .full-width-component.layout-container.medium-yellow > .flex-height .col-sm-6, .full-width-component.layout-container.light-grey > .flex-height .col-sm-6, .full-width-component.layout-container.light-grey-20 > .flex-height .col-sm-6, .full-width-component.layout-container.light-cool-blue > .flex-height .col-sm-6, .full-width-component.layout-container.light-orange-20 > .flex-height .col-sm-6, .full-width-component.layout-container.light-orange-40 > .flex-height .col-sm-6, .full-width-component.layout-container.light-taupe-50-bg > .flex-height .col-sm-6 {
+    max-width: 532px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.medium-yellow > .flex-height .col-sm-6 .cmp-container,
+  .full-width-component .layout-container.light-grey > .flex-height .col-sm-6 .cmp-container,
+  .full-width-component .layout-container.light-grey-20 > .flex-height .col-sm-6 .cmp-container,
+  .full-width-component .layout-container.light-cool-blue > .flex-height .col-sm-6 .cmp-container,
+  .full-width-component .layout-container.light-orange-20 > .flex-height .col-sm-6 .cmp-container,
+  .full-width-component .layout-container.light-orange-40 > .flex-height .col-sm-6 .cmp-container,
+  .full-width-component .layout-container.light-taupe-50-bg > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.medium-yellow > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.light-grey > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.light-grey-20 > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.light-cool-blue > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.light-orange-20 > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.light-orange-40 > .flex-height .col-sm-6 .cmp-container, .full-width-component.layout-container.light-taupe-50-bg > .flex-height .col-sm-6 .cmp-container {
+    max-width: none;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-6:last-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-6:last-child .cmp-container {
+    padding-right: calc(100% - 512px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-6:last-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-6:last-child .cmp-container {
+    padding-right: calc(100% - 532px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-4:first-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-4:first-child .cmp-container {
+    padding-left: calc(100% - 341.6666666667px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-4:first-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-4:first-child .cmp-container {
+    padding-left: calc(100% - 354.6666666667px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-4:nth-child(2), .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-4:nth-child(2) {
+    max-width: 354.6666666667px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-4:last-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-4:last-child .cmp-container {
+    padding-right: calc(100% - 341.6666666667px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .layout-container.overview-content-wrapper .flex-height .col-sm-4:last-child .cmp-container, .full-width-component.layout-container.overview-content-wrapper .flex-height .col-sm-4:last-child .cmp-container {
+    padding-right: calc(100% - 354.6666666667px);
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component.titlebar.title.title-wrapper-yellow-grey-rings, .full-width-component .titlebar.title.title-wrapper-yellow-grey-rings {
+    background-position-x: 57vw;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .stock-ticker-wrapper .share-performance .stock-row,
+  .full-width-component .stock-ticker-wrapper .share-performance .disclaimer-row {
+    display: block;
+    max-width: 961px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .stock-ticker-wrapper .share-performance .stock-row,
+  .full-width-component .stock-ticker-wrapper .share-performance .disclaimer-row {
+    max-width: 1000px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .layout-container.subscribe-main-content-wrapper .cmp-container, .full-width-component.layout-container.subscribe-main-content-wrapper .cmp-container,
+  .full-width-component .full-header .desktop-header-wrapper .search-bar-wrapper .close-div,
+  .full-width-component .full-header .desktop-header-wrapper .search-bar-wrapper .global-search {
+    display: block;
+    max-width: 993px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .layout-container.subscribe-main-content-wrapper .cmp-container, .full-width-component.layout-container.subscribe-main-content-wrapper .cmp-container,
+  .full-width-component .full-header .desktop-header-wrapper .search-bar-wrapper .close-div,
+  .full-width-component .full-header .desktop-header-wrapper .search-bar-wrapper .global-search {
+    max-width: 1032px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component [data-section=footer-bottom-layer] .top-part,
+  .full-width-component [data-section=footer-bottom-layer] .bottom-part, .full-width-component.breadcrumb.breadcrumb-section nav, .full-width-component.titlebar.title .cmp-title, .full-width-component .titlebar.title .cmp-title {
+    display: block;
+    max-width: 995px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component [data-section=footer-bottom-layer] .top-part,
+  .full-width-component [data-section=footer-bottom-layer] .bottom-part, .full-width-component.breadcrumb.breadcrumb-section nav, .full-width-component.titlebar.title .cmp-title, .full-width-component .titlebar.title .cmp-title {
+    max-width: 1034px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component [data-section=footer-bottom-layer] .top-part,
+  .full-width-component [data-section=footer-bottom-layer] .bottom-part {
+    padding-bottom: 8px;
+    overflow: auto;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component [data-section=footer-bottom-layer].footer-copyright-wrapper {
+    min-height: 105px;
+  }
+}
+@media (min-width: 1025px) {
+  .full-width-component .desktop-region-language-menu-wrapper {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1025px) {
+  .full-width-component .desktop-header-wrapper .desktop-search-bar {
+    position: relative;
+    z-index: 1099;
+  }
+  .full-width-component .desktop-header-wrapper .desktop-search-bar .search-bar-wrapper .close-div {
+    left: calc(50vw + 498px - 15px);
+  }
+}
+@media (min-width: 1025px) and (min-width: 1025px) and (min-width: 1280px) {
+  .full-width-component .desktop-header-wrapper .desktop-search-bar .search-bar-wrapper .close-div {
+    left: calc(50vw + 517px - 15px);
+  }
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/src/index.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[2].use[4]!./src/main/webpack/prerequisite/base/styles/druglist.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Drug List styling starts - content created via HTML component */
+div.druglist {
+  /* REMOVE CSS FROM HERE */
+  /* .contract-form {
+      max-width: 315px;
+      margin-top: 50px;
+  } */
+  /* table thead tr {
+      border-bottom: 1px solid #000;
+      height: 60px;
+  } */
+  /* REMOVE CSS TO HERE */
+}
+div.druglist .mar-top-15 {
+  margin-top: 15px;
+}
+div.druglist .primary-yellow-button-rte {
+  min-width: inherit !important;
+}
+div.druglist table {
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  /* table-layout: fixed; */
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+div.druglist table tbody tr {
+  cursor: pointer;
+  height: 60px;
+  border-bottom: 2px solid white;
+}
+div.druglist table th,
+div.druglist table td {
+  text-align: left;
+  padding: 20px;
+}
+div.druglist table tbody {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+div.druglist .loading-spinner {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+div.druglist .loading-spinner ::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+div.druglist .loading-spinner p {
+  font-family: agenda-medium-webfont, helvetica-neue, helvetica, arial, sans-serif;
+}
+div.druglist .loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari and Chrome */
+  -o-transform: translate(-50%, -50%); /* Opera */
+  -moz-transform: translate(-50%, -50%); /* Firefox */
+  width: 100%;
+  color: #003946;
+}
+div.druglist .loading-container p {
+  font-size: 16px;
+  margin: 0;
+}
+div.druglist .white-container {
+  margin: 20%;
+  width: 90%;
+  max-width: 300px;
+  border-radius: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background-color: white;
+  height: 300px;
+}
+div.druglist .fa-spinner {
+  font-size: 64px !important;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+div.druglist .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+div.druglist .no-display {
+  display: none;
+}
+div.druglist .contract-input {
+  width: 290px;
+}
+div.druglist .cmp-table-data-content table thead tr th {
+  background: #FFCB05;
+  color: #3D4142;
+  text-transform: none;
+  text-align: center;
+  border-bottom: 0;
+  vertical-align: top;
+  height: 64px;
+  border-top: 1px solid #DCDEDF !important;
+  padding: 16px !important;
+}
+div.druglist .cmp-table-data-content table thead tr:not(:first-child) {
+  border-top: 2px solid #FFFFFF;
+}
+div.druglist .wgt-AM-ajaxspin {
+  background: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+div.druglist .wgt-AM-ajaxspin-body {
+  background: #FFFFFF;
+  margin: auto;
+  max-width: 16em;
+  position: sticky;
+  top: 50%;
+}
+div.druglist .wgt-AM-container.dropShadow {
+  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.12);
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.12);
+  border-style: ridge;
+  border-color: #E2D9D0;
+  border-width: thin;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+div.druglist .wgt-AM-alignCenter {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  div.druglist .primary-yellow-button-rte {
+    margin: 0px !important;
+  }
+  div.druglist .cmp-table-data-content {
+    overflow-x: auto;
+  }
+}
+
+/* Drug List styling ends - content created via HTML component */

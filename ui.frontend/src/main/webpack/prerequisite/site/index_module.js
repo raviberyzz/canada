@@ -1,1 +1,1 @@
-// empty
+import './scripts/index.js'

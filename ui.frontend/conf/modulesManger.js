@@ -63,7 +63,7 @@ const ModulesManager = class {
     }
 
     getModules() {
-        // console.log('this.modules--->', this.modules);
+        console.log('this.modules--->', this.modules);
         return this.modules;
     }
 };
