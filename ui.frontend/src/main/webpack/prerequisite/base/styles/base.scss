@@ -1,0 +1,377 @@
+@import './core.scss';
+/* Mfa modal styling starts here */
+// .modal.slf-modal.fix-order{
+//     display: none;
+// }
+/* Mfa modal styling ends here */
+
+/*alternative colour theme for yellow stripe*/
+.header-white-stripe .slf-header-wrapper .desktop-header-wrapper .yellow-stripe {
+    background-color: $white;
+}
+//Adding Custom Styling for Full Width Components Toggle (Desktop Only)
+/* Header Regions Menu, Footer */
+@media (min-width: $desktop-screen-min) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .full-width-component {
+        /* Full Width Component Expansion for Selected Components */
+        #mainfooter,
+        .full-header .desktop-header-wrapper .yellow-stripe,
+        .full-header .desktop-header-wrapper .search-bar-wrapper,
+        .full-header .desktop-header-wrapper .desktop-region-bar,
+        .teaser.editorial-hero-banner,
+        &.breadcrumb.breadcrumb-section.aem-GridColumn,
+        &.titlebar.title.aem-GridColumn,
+        .titlebar.title,
+        &.titlebar.title,
+        .stock-ticker-wrapper .share-performance,
+        .container-component.content-highlight,
+        .container-component.company-highlight-blue-grey-background,
+        .container-component.company-highlight-yellow-grey-background,
+        .container-component.grey-background-box,
+        .container-component.light-orange-20,
+        .text.grey-background-box,
+        .text.yellow-gradient-box,
+        .text.light-orange-background-wrapper,
+        .layout-container.subscribe-main-content-wrapper,
+        .layout-container.medium-yellow,
+        .layout-container.light-grey,
+        .layout-container.light-grey-20,
+        .layout-container.light-cool-blue,
+        .layout-container.light-orange-20,
+        .layout-container.light-orange-40,
+        .layout-container.light-taupe-50-bg,
+        &.layout-container.subscribe-main-content-wrapper,
+        &.layout-container.medium-yellow,
+        &.layout-container.light-grey,
+        &.layout-container.light-grey-20,
+        &.layout-container.light-cool-blue,
+        &.layout-container.light-orange-20,
+        &.layout-container.light-orange-40,
+        &.layout-container.light-taupe-50-bg,
+        .link-list.editorial-nav-desktop-wrapper .lists-wrapper .links {
+            width: 100vw !important;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Full Width Teaser Components Image Extend (Home Page Hero, Landing Page Hero, Life Moment 2nd Level Banner */
+        .teaser.banner-section.home-page-hero-banner,
+        .teaser.banner-section.landing-page-hero-banner,
+        .teaser.banner-section.life-moment-second-level-banner {
+            .desk-img {
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                background-size: cover !important;
+                background-position: center center !important;
+            }
+        }
+
+        /* Full Width - Layout Container - Overview Content Wrapper */
+        .layout-container.overview-content-wrapper,
+        &.layout-container.overview-content-wrapper {
+            /* Used due to the Fractional Pixel issue with background gradient when using transform  */ 
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        // Full width Bottom Border for Teaser Component (Yellow Border)
+        .teaser.banner-section.yellow-border-bottom {
+            .right-image-position .desk-img,
+            .left-image-position .desk-img {
+                border-bottom: 7px solid $primary-yellow-background;
+            }
+
+            .right-image-position,
+            .left-image-position {
+                border-bottom: none;
+            }
+        }
+        // Full width Bottom Border for Teaser Component (Blue Border)
+        .teaser.banner-section.blue-border-bottom {
+            .right-image-position .desk-img,
+            .left-image-position .desk-img {
+                border-bottom: 7px solid $medium-blue-color;
+            }
+
+            .right-image-position,
+            .left-image-position {
+                border-bottom: none;
+            }
+        }
+        //Full Width Homepage Hero, Text-Section Margin Adjust due to Border Bottom Height
+        .teaser.banner-section.home-page-hero-banner.yellow-border-bottom,
+        .teaser.banner-section.home-page-hero-banner.blue-border-bottom {
+            .right-image-position .desk-img,
+            .left-image-position .desk-img {
+                height: 407px;
+            }
+
+            .left-item.text-section,
+            .right-item.text-section {
+                margin-bottom: 7px;
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    margin-top: -3px; //IE11 Fix for teaser whitebox spacing
+                }
+            }
+        }
+
+        // Full Width Landing Page Banners, Ensure text-section is visible ontop of Banner on either Image Alignment.
+        .teaser.banner-section.home-page-hero-banner,
+        .teaser.banner-section.landing-page-hero-banner,
+        .teaser.banner-section.life-moment-second-level-banner {
+            .right-item.text-section {
+                z-index: 1;
+            }
+
+            .left-item.text-section {
+                z-index: 1;
+            }
+        }
+
+        // Full Width Editorial Hero Banner Adjustments
+        // Ensure Desktop Image Height and Align Text Properly based on Non-Full Width Component Values.
+        .teaser.editorial-hero-banner {
+            .side-image.desktop-image {
+                height: 384px;
+
+                @media (min-width: $desktop-screen-max) {
+                    height: 398px;
+                }
+            }
+
+            .left-item.text-section {
+                padding-left: calc(50% - 472px);
+
+                @media (min-width: $desktop-screen-max) {
+                    padding-left: calc(50% - 532px);
+                }
+            }
+
+            .right-item.text-section {
+                padding-right: calc(50% - 472px);
+
+                @media (min-width: $desktop-screen-max) {
+                    padding-right: calc(50% - 532px);
+                }
+            }
+        }
+
+        //Full Width Linked List - Editorial Version Full Width
+        .link-list.editorial-nav-desktop-wrapper .lists-wrapper ul.list-unstyled {    
+            padding-left: calc(50% - 496.5px);
+            padding-right: calc(50% - 496.5px);
+
+            @media (min-width: $desktop-screen-max) {
+                padding-left: calc(50% - 516px);
+                padding-right: calc(50% - 516px);
+            }
+        } 
+
+        /* Margin Constrains for Footer Component, Header Layers Full Width */
+        .row[data-section="footer-top-layer"],
+        .row[data-section="footer-middle-layer"],
+        .row[data-section="footer-bottom-layer"],
+        .row[data-section="footer-custom-layer"],
+        .full-header .desktop-header-wrapper .desktop-region-bar > .xf-content-height > .aem-Grid.aem-Grid--12,
+        .container-component.content-highlight .cmp-container,
+        .container-component.grey-background-box .cmp-container,
+        .container-component.light-orange-20 .cmp-container,
+        .text.grey-background-box .cmp-text,
+        .text.yellow-gradient-box .cmp-text,
+        .text.light-orange-background-wrapper .cmp-text,
+        .layout-container.medium-yellow .cmp-container,
+        .layout-container.light-grey .cmp-container,
+        .layout-container.light-grey-20 .cmp-container,
+        .layout-container.light-cool-blue .cmp-container,
+        .layout-container.light-orange-20 .cmp-container,
+        .layout-container.light-orange-40 .cmp-container,
+        .layout-container.light-taupe-50-bg .cmp-container,
+        &.layout-container.medium-yellow .cmp-container,
+        &.layout-container.light-grey .cmp-container,
+        &.layout-container.light-grey-20 .cmp-container,
+        &.layout-container.light-cool-blue .cmp-container,
+        &.layout-container.light-orange-20 .cmp-container,
+        &.layout-container.light-orange-40 .cmp-container,
+        &.layout-container.light-taupe-50-bg .cmp-container {
+            display: block;
+            max-width: 1025px;
+            margin: 0 auto;
+
+            @media (min-width: $desktop-screen-max) {
+                max-width: 1064px;
+            }
+        }
+        //Full Width - Company Highlights Content Margin
+        .container-component.company-highlight-blue-grey-background .cmp-container,
+        .container-component.company-highlight-yellow-grey-background .cmp-container {
+            display: block;
+            max-width: 997px;
+            margin: 0 auto;
+
+            @media (min-width: $desktop-screen-max) {
+                max-width: 1016px;
+            }
+        }
+
+        /* Layout Container - Overview Content Wrapper (2 Column Variant) - Ensuring Columns are Properly Spaced*/
+        .layout-container.overview-content-wrapper .flex-height .col-sm-6:first-child .cmp-container,
+        &.layout-container.overview-content-wrapper .flex-height .col-sm-6:first-child .cmp-container { 
+            padding-left: calc(100% - 512px);
+            
+            @media (min-width: $desktop-screen-max) {
+                padding-left: calc(100% - 532px);
+            }
+        }
+
+        /* Layout Container - 2 Column Variant - 50/50% Flex Container - Investors/Careers COM Pages*/
+        .layout-container.medium-yellow > .flex-height ,
+        .layout-container.light-grey > .flex-height ,
+        .layout-container.light-grey-20 > .flex-height ,
+        .layout-container.light-cool-blue > .flex-height ,
+        .layout-container.light-orange-20 > .flex-height ,
+        .layout-container.light-orange-40 > .flex-height ,
+        .layout-container.light-taupe-50-bg > .flex-height , 
+        &.layout-container.medium-yellow > .flex-height ,
+        &.layout-container.light-grey > .flex-height ,
+        &.layout-container.light-grey-20 > .flex-height ,
+        &.layout-container.light-cool-blue > .flex-height ,
+        &.layout-container.light-orange-20 > .flex-height ,
+        &.layout-container.light-orange-40 > .flex-height ,
+        &.layout-container.light-taupe-50-bg > .flex-height { 
+
+            justify-content: center;
+
+            .col-sm-6 {
+                max-width: calc(1025px / 2); 
+                
+                @media (min-width: $desktop-screen-max) {
+                    max-width: calc(1064px / 2); 
+                }
+                .cmp-container {
+                    max-width: none; //Ensure no max width is inheried from layout-container background colour classes defined above.
+                }
+
+            }
+            
+        }
+        .layout-container.overview-content-wrapper .flex-height .col-sm-6:last-child .cmp-container,
+        &.layout-container.overview-content-wrapper .flex-height .col-sm-6:last-child .cmp-container {
+            padding-right: calc(100% - 512px);
+
+            @media (min-width: $desktop-screen-max) {
+                padding-right: calc(100% - 532px);
+            }
+        }
+
+        /* Layout Container - Overview Content Wrapper (3 Column Variant) - Ensuring Columns are Properly Spaced */
+        .layout-container.overview-content-wrapper .flex-height .col-sm-4:first-child .cmp-container,
+        &.layout-container.overview-content-wrapper .flex-height .col-sm-4:first-child .cmp-container { 
+            padding-left:calc(100% - (1025px / 3));
+            
+            @media (min-width: $desktop-screen-max) {
+                padding-left: calc(100% - (1064px / 3));
+            }
+        }
+
+        .layout-container.overview-content-wrapper .flex-height .col-sm-4:nth-child(2),
+        &.layout-container.overview-content-wrapper .flex-height .col-sm-4:nth-child(2) {
+            max-width: calc(1064px / 3);
+        }
+
+        .layout-container.overview-content-wrapper .flex-height .col-sm-4:last-child .cmp-container,
+        &.layout-container.overview-content-wrapper .flex-height .col-sm-4:last-child .cmp-container {
+            padding-right: calc(100% - (1025px / 3));
+
+            @media (min-width: $desktop-screen-max) {
+                padding-right: calc(100% - (1064px / 3));
+            }
+        }
+
+        
+        &.titlebar.title.title-wrapper-yellow-grey-rings ,.titlebar.title.title-wrapper-yellow-grey-rings {
+            background-position-x: 57vw;
+        }
+
+        /* Stock Ticker - Yellow Variant */
+        .stock-ticker-wrapper .share-performance .stock-row,
+        .stock-ticker-wrapper .share-performance .disclaimer-row   {
+            display: block;
+            max-width: 961px;
+            margin: 0 auto;
+
+            @media (min-width: $desktop-screen-max) {
+                max-width: 1000px;
+            }
+        } 
+
+        .layout-container.subscribe-main-content-wrapper .cmp-container,
+        &.layout-container.subscribe-main-content-wrapper .cmp-container,
+        .full-header .desktop-header-wrapper .search-bar-wrapper .close-div,
+        .full-header .desktop-header-wrapper .search-bar-wrapper .global-search {
+            display: block;
+            max-width: 993px;
+            margin: 0 auto;
+
+            @media (min-width: $desktop-screen-max) {
+                max-width: 1032px;
+            }
+        }
+        
+        [data-section="footer-bottom-layer"] .top-part,
+        [data-section="footer-bottom-layer"] .bottom-part,
+        &.breadcrumb.breadcrumb-section nav,
+        &.titlebar.title .cmp-title,.titlebar.title .cmp-title {
+            display: block;
+            max-width: 995px;
+            margin: 0 auto;
+
+            @media (min-width: $desktop-screen-max) {
+                max-width: 1034px;
+            }
+        }
+
+        /* Full width Footer Adjustments */
+        [data-section="footer-bottom-layer"] .top-part,
+        [data-section="footer-bottom-layer"] .bottom-part {
+            padding-bottom: 8px;
+            overflow: auto;
+        }
+        [data-section="footer-bottom-layer"].footer-copyright-wrapper {
+            min-height: 105px;
+        }
+
+        /* Header Region Component Adjustments */
+        .desktop-region-language-menu-wrapper {
+            box-shadow: none;
+        }
+
+        /* Search bar in the header */
+        @media(min-width: $desktop-screen-min) {
+            .desktop-header-wrapper .desktop-search-bar {
+                position:relative;
+                z-index:1099;
+            }
+            .desktop-header-wrapper .desktop-search-bar .search-bar-wrapper .close-div {
+                left:calc(50vw + 498px - 15px);
+            }
+        }
+        
+        @media(min-width: $desktop-screen-min) and (min-width: $desktop-screen-max) {
+            .desktop-header-wrapper .desktop-search-bar .search-bar-wrapper .close-div {
+                left:calc(50vw + 517px - 15px);
+            }
+        }
+    }
+}

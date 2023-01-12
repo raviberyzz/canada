@@ -18,7 +18,12 @@
     "aemsyncro": "aemsync -w ../ui.apps/src/main/content",
     "aemfed": "aemfed -t \"http://admin:admin@localhost:4504\" -w \"../ui.apps/src/main/content/jcr_root/\"",
     "watch": "npm-run-all --parallel start chokidar aemsyncro",
-    "watchsync": "aemfed && watch"
+    "watchsync": "aemfed && watch",
+    "build:clientlib": "clientlib --verbose",
+    "deploy:local": "aemsync -t http://admin:admin@localhost:4504 -p ../ui.apps/",
+    "build-and-deploy": "webpack --env dev --config ./webpack.local.js && npm run build:clientlib",
+    "watch:local": "chokidar \"src/main/webpack/**/*.*\" -c \"npm run build-and-deploy\"",
+    "local": "npm run watch:local"
   },
   "dependencies": {
     "bootstrap": "^3.3.5",
