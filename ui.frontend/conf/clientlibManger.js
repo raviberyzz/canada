@@ -64,7 +64,11 @@ const ClientLibManager = class {
 
     _updateCLCategory(module) {
         const categoriesArr = [];
+        if(this.modules[module].moduleType==='components') {
+            categoriesArr.push(`sunlife.ca.component`,`sunlife.ca.components.content.${module}`);
+        }
         categoriesArr.push(`sunlife.ca.${module}`, ...this._getExplicitProperty('categories'));
+       
         this.clientlibConfig[module]['categories'] = categoriesArr;
     }
 
@@ -83,14 +87,17 @@ const ClientLibManager = class {
     _updateCLAssests(module) {
         this.clientlibConfig[module]['assets'] = {
             js: this._getAssetInfo('js', module),
-            css: this._getAssetInfo('css', module),
-            resources: this._getAssetInfo('', module, {ignore: ['**/*.js', '**/*.css']}),
+            css: this._getAssetInfo('css', module)
         };
+
+        if(this.modules[module].isContainResources) {
+            this.clientlibConfig[module]['assets']['resources'] = {base: "resources", files:['*.eot', '*.svg','*.ttf', '*.woff', '*.woff2','*.png','*.otf', '**/*.eot', '**/*.svg','**/*.ttf', '**/*.woff', '**/*.woff2','**/*.png','**/*.otf']};
+        }
     }
 
     _getAssetInfo(type, module, configs) {
         return {
-            cwd: `clientlib-${module}`,
+            cwd: this.modules[module].distClientlibDir,
             files: [`*.${type}`,`**/*.${type}`],
             flatten: false,
             ...configs
@@ -112,6 +119,8 @@ const ClientLibManager = class {
                 console.log('Error while reading context.json at -', configPath, err);
                 return;
             }
+        } else {
+            this.explicitCLConfig = {};
         }
 
         this.configureClientlibObj(module);

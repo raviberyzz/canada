@@ -1,2 +1,2 @@
-src/main/content/jcr_root/apps/sunlife/clientlibs/clientlib-site
-src/main/content/jcr_root/apps/sunlife/clientlibs/clientlib-dependencies
+src/main/content/jcr_root/apps/sunlife/ca/clientlibs/*
+src/main/content/jcr_root/apps/sunlife/ca/components/**/**/clientlibs

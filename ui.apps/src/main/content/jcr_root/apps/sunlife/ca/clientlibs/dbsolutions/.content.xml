@@ -4,6 +4,4 @@
     categories="[sunlife.ca.dbsolutions]"
     embed="[]"
     dependencies="[]"
-    cssProcessor="[default:none,min:none]"
-    jsProcessor="[default:none,min:none]"
     allowProxy="{Boolean}true"/>

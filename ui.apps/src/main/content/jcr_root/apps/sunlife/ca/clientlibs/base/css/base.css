@@ -1,6 +1,6 @@
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/src/index.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[2].use[4]!./src/main/webpack/prerequisite/base/styles/base.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[1].use[3]!./src/main/webpack/prerequisite/base/styles/base.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
 /* Mfa modal styling starts here */
 /* Mfa modal styling ends here */
 /*alternative colour theme for yellow stripe*/
@@ -52,8 +52,7 @@
   .full-width-component .link-list.editorial-nav-desktop-wrapper .lists-wrapper .links {
     width: 100vw !important;
     margin-left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   .full-width-component .teaser.banner-section.home-page-hero-banner .desk-img,
   .full-width-component .teaser.banner-section.landing-page-hero-banner .desk-img,
@@ -245,9 +244,7 @@
   .full-width-component .layout-container.light-orange-20 > .flex-height,
   .full-width-component .layout-container.light-orange-40 > .flex-height,
   .full-width-component .layout-container.light-taupe-50-bg > .flex-height, .full-width-component.layout-container.medium-yellow > .flex-height, .full-width-component.layout-container.light-grey > .flex-height, .full-width-component.layout-container.light-grey-20 > .flex-height, .full-width-component.layout-container.light-cool-blue > .flex-height, .full-width-component.layout-container.light-orange-20 > .flex-height, .full-width-component.layout-container.light-orange-40 > .flex-height, .full-width-component.layout-container.light-taupe-50-bg > .flex-height {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .full-width-component .layout-container.medium-yellow > .flex-height .col-sm-6,
   .full-width-component .layout-container.light-grey > .flex-height .col-sm-6,
@@ -379,8 +376,7 @@
 }
 @media (min-width: 1025px) {
   .full-width-component .desktop-region-language-menu-wrapper {
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
 }
 @media (min-width: 1025px) and (min-width: 1025px) {
@@ -397,9 +393,9 @@
     left: calc(50vw + 517px - 15px);
   }
 }
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/src/index.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[2].use[4]!./src/main/webpack/prerequisite/base/styles/druglist.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[1].use[3]!./src/main/webpack/prerequisite/base/styles/druglist.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
 /* Drug List styling starts - content created via HTML component */
 div.druglist {
   /* REMOVE CSS FROM HERE */
@@ -439,8 +435,7 @@ div.druglist table td {
   padding: 20px;
 }
 div.druglist table tbody {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 div.druglist .loading-spinner {
   overflow: hidden;
@@ -543,8 +538,7 @@ div.druglist .wgt-AM-ajaxspin-body {
   top: 50%;
 }
 div.druglist .wgt-AM-container.dropShadow {
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.12);
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.12);
   border-style: ridge;
   border-color: #E2D9D0;
   border-width: thin;
