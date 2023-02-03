@@ -4,6 +4,4 @@
     categories="[sunlife.ca.site]"
     embed="[sunlife.core.vendor,sunlife.core.dependencies,sunlife.core.base,sunlife.core.component,sunlife.core.author.commons,sunlife.ca.base]"
     dependencies="[]"
-    cssProcessor="[default:none,min:none]"
-    jsProcessor="[default:none,min:none]"
     allowProxy="{Boolean}true"/>

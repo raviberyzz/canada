@@ -16,7 +16,7 @@
   \*******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/base.scss */ \"./src/main/webpack/prerequisite/dbsolutions/styles/base.scss\");\n\n\n//# sourceURL=webpack://aem-maven-archetype/./src/main/webpack/prerequisite/dbsolutions/index_module.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/base.scss */ \"./src/main/webpack/prerequisite/dbsolutions/styles/base.scss\");\n\n\n//# sourceURL=webpack://web-cms-aem-ca-archtyp-39/./src/main/webpack/prerequisite/dbsolutions/index_module.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://aem-maven-archetype/./src/main/webpack/prerequisite/dbsolutions/styles/base.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://web-cms-aem-ca-archtyp-39/./src/main/webpack/prerequisite/dbsolutions/styles/base.scss?");
 
 /***/ })
 

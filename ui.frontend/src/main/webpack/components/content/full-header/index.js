@@ -117,7 +117,8 @@ $(document).ready(function () {
                 if ($('.site-level-notification').length == 0 || $('.site-level-notification').css('display') == "none") { height = 0; }
                 $('.slf-header-wrapper .slf-mobile-header-wrapper').css('top', height);
             });*/
-        };
+        }
+        
         if ($(window).width() <= 1024) {
             mobileHeader();
         }

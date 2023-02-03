@@ -2,6 +2,7 @@
 
 const path = require('path');
 const glob = require('glob');
+const webpack = require('webpack'); //to access built-in plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -17,42 +18,41 @@ const resolve = {
         configFile: './tsconfig.json'
     })]
 };
+const projectModules = modulesManager.getModules();
+const resourcesArr = modulesManager.getResourceModules();
+
+function resourcesBundleHandler() {
+    if(resourcesArr.length){
+        return new CopyWebpackPlugin({
+            patterns: [...resourcesArr]
+        })
+    }
+}
 
 module.exports = {
     resolve: resolve,
 
     entry: () => {
         const entryModulesObj = {};
-        const modules = modulesManager.getModules();
-        Object.values(modules).forEach((module) => {
-            entryModulesObj[module.namespace] = module.currentModuleRootFile;
+        Object.values(projectModules).forEach((module) => {
+            if(!entryModulesObj[module.namespace]) {
+                entryModulesObj[module.namespace] = module.currentModuleRootFile;
+            } else {
+                entryModulesObj[module.pathReferencedModuleName] = module.currentModuleRootFile;
+            }
         });
         return entryModulesObj;
     },
 
     output: {
         filename: (chunkData) => {
-            return `clientlib-${chunkData.chunk.name}/[name].js`
+            const name = `${projectModules[chunkData.chunk.name].distClientlibDir}/[name].js`
+            return name;
         },
         path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
-            {
-                test: /\.tsx?$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader'
-                    },
-                    {
-                        loader: 'glob-import-loader',
-                        options: {
-                            resolve: resolve
-                        }
-                    }
-                ]
-            },
             {
                 test: /\.(jsx|js)$/,
                 include: path.resolve(__dirname, 'src'),
@@ -80,16 +80,6 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins() {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
-                        }
-                    },
-                    {
                         loader: 'sass-loader',
                     },
                     {
@@ -99,22 +89,51 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            {
+                test: /\.less$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader", // translates CSS into CommonJS
+                    },
+                    {
+                        loader: "less-loader", // compiles Less to CSS
+                    },
+                    {
+                        loader: 'glob-import-loader',
+                        options: {
+                            resolve: resolve
+                        }
+                    }
+                ],
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                type: 'asset/resource'
+            },
         ]
     },
     plugins: [
+        new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
         new ESLintPlugin({
-            extensions: ['js', 'ts', 'tsx']
+            extensions: ['js', 'jsx']
         }),
         new MiniCssExtractPlugin({
-            filename: 'clientlib-[name]/[name].css'
+            filename: ({ chunk }) => {
+                const name = `${projectModules[chunk.name].distClientlibDir}/[name].css`;
+                return name;
+            },
+          }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'reactComponents':'reactComponents',
+            'React':'React'
         }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
-            ]
-        })
+        resourcesBundleHandler,
     ],
     stats: {
         assetsSort: 'chunks',
@@ -131,5 +150,5 @@ module.exports = {
         providedExports: false,
         source: false,
         warnings: true
-    }
+    },
 };
