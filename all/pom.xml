@@ -62,7 +62,18 @@
                         </embedded>
                         <embedded>
                             <groupId>ca.sunlife.web.cms</groupId>
+                            <artifactId>web-cms-aem-ca.core</artifactId>
+                            <target>/apps/sunlife-packages/ca/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>ca.sunlife.web.cms</groupId>
                             <artifactId>web-cms-aem-ca.ui.content</artifactId>
+                            <type>zip</type>
+                            <target>/apps/sunlife-packages/ca/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>ca.sunlife.web.cms</groupId>
+                            <artifactId>web-cms-aem-ca.ui.config</artifactId>
                             <type>zip</type>
                             <target>/apps/sunlife-packages/ca/install</target>
                         </embedded>
@@ -167,7 +178,12 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
-
+        <dependency>
+            <groupId>ca.sunlife.web.cms</groupId>
+            <artifactId>web-cms-aem-ca.ui.config</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.content</artifactId>
