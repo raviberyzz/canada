@@ -126,13 +126,6 @@ module.exports = {
                 return name;
             },
           }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'reactComponents':'reactComponents',
-            'React':'React'
-        }),
         resourcesBundleHandler,
     ],
     stats: {
