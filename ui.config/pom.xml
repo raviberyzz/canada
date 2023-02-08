@@ -49,6 +49,7 @@
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
+                    <group>sunlife</group>
                     <packageType>container</packageType>
                     <showImportPackageReport>false</showImportPackageReport>
                     <repositoryStructurePackages>
