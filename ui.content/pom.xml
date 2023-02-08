@@ -48,7 +48,7 @@
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
                     <acHandling>merge_preserve</acHandling>
-                    <group>ca.sunlife.web.cms</group>
+                    <group>sunlife</group>
                     <name>web-cms-aem-ca.ui.content</name>
                     <allowIndexDefinitions>true</allowIndexDefinitions>
                     <failOnDuplicateEntries>false</failOnDuplicateEntries>

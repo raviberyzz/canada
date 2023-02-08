@@ -51,7 +51,7 @@
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
-                    <group>ca.sunlife.web.cms</group>
+                    <group>sunlife</group>
                     <name>web-cms-aem-ca.ui.apps</name>
                     <packageType>application</packageType>
                     <repositoryStructurePackages>
