@@ -12,10 +12,9 @@
       <includes>
         <include>**/*</include>
       </includes>
-	  	   <excludes>
-        <exclude>%regex[.*/target.*]</exclude>
-        <exclude>target/</exclude>
-      </excludes>
+	  	  <excludes>
+          <exclude>**/target/</exclude>
+        </excludes>
       <outputDirectory></outputDirectory>
     </fileSet>
   </fileSets>
