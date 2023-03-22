@@ -1,6 +1,5 @@
 # Created by https://www.gitignore.io/api/eclipse,java,maven
-node-app/node_modules/
-node-app/public/
+
 ### Eclipse ###
 *.pydevproject
 .metadata
@@ -20,6 +19,9 @@ local.properties
 
 # External tool builders
 .externalToolBuilders/
+
+# Escape dummy_sdk bin folder
+!dispatcher.cloud/test/dummy_sdk/bin
 
 # Locally stored "Eclipse launch configurations"
 *.launch
@@ -69,12 +71,41 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+
 ### Vault ###
 .vlt
+
 
 ### IntelliJ ###
 .idea/
 *.iml
-node-app/node/
-/core/src/test/resources/ca/sunlife/web/cms/core/services/impl/~$paforms.xlsx
-/core/src/test/resources/ca/sunlife/web/cms/core/services/impl/~$lookup.xlsx
+
+
+### Node.js ###
+
+# Log files
+*.log
+
+# NPM
+node_modules/
+yarn.lock
+
+# Webpack
+build/
+dist/
+actions/common/
+
+# Frontend Maven Plugin
+node/
+
+# Tests
+coverage/
+reports/
+
+# Others
+dispatcher/src/conf.d/variables/default.vars
+ui.tests/test-module/assets/form/themes/**/*diff.png
+ui.tests/test-module/assets/form/themes/**/*current.png
+
+# Visual Code
+.vscode/
