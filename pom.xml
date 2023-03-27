@@ -52,7 +52,7 @@
 		<vault.dev.user>admin</vault.dev.user>
 		<vault.dev.password>sunlifedev</vault.dev.password>
         <frontend-maven-plugin.version>1.12.0</frontend-maven-plugin.version>
-        <core.wcm.components.version>2.19.0</core.wcm.components.version>
+        <core.wcm.components.version>2.8.0</core.wcm.components.version>
 
         <bnd.version>5.1.2</bnd.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -835,12 +835,6 @@ Bundle-DocURL:
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
                 <version>1.3.6</version>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.testing.aem-mock-plugin</artifactId>
-                <version>${core.wcm.components.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>junit-addons</groupId>

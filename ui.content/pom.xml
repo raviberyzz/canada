@@ -30,7 +30,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>web-cms-aem-ca.ui.content</artifactId>
+    <artifactId>web-cms-aem-ca.content</artifactId>
     <packaging>content-package</packaging>
     <name>sunlife - UI content</name>
     <description>UI content package for sunlife</description>
@@ -49,7 +49,7 @@
                 <configuration>
                     <acHandling>merge_preserve</acHandling>
                     <group>sunlife</group>
-                    <name>web-cms-aem-ca.ui.content</name>
+                    <name>web-cms-aem-ca.content</name>
                     <allowIndexDefinitions>true</allowIndexDefinitions>
                     <failOnDuplicateEntries>false</failOnDuplicateEntries>
                     <!--  subPackages>

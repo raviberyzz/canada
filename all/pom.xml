@@ -65,7 +65,7 @@
                         </embedded>
                         <embedded>
                             <groupId>ca.sunlife.web.cms</groupId>
-                            <artifactId>web-cms-aem-ca.ui.content</artifactId>
+                            <artifactId>web-cms-aem-ca.content</artifactId>
                             <type>zip</type>
                             <target>/apps/sunlife-packages/ca/install</target>
                         </embedded>
@@ -172,7 +172,7 @@
         </dependency>
         <dependency>
             <groupId>ca.sunlife.web.cms</groupId>
-            <artifactId>web-cms-aem-ca.ui.content</artifactId>
+            <artifactId>web-cms-aem-ca.content</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
