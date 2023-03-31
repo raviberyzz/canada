@@ -96,6 +96,13 @@
     <dependencies>
         <dependency>
             <groupId>ca.sunlife.web.cms</groupId>
+            <artifactId>web-cms-aem-ca.ui.frontend</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <dependency>
+            <groupId>ca.sunlife.web.cms</groupId>
             <artifactId>web-cms-aem-ca.ui.apps.structure</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
