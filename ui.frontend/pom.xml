@@ -106,7 +106,7 @@
                                 <resource>
                                     <directory>${basedir}/target</directory>
                                     <includes>
-                                        <include>${parent.artifactId}-${parent.version}-Sources.zip</include>
+                                        <include>${parent.artifactId}-${parent.version}-Sources-source.zip</include>
                                     </includes>
                                 </resource>
                             </resources>
