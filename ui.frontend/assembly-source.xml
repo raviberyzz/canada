@@ -15,7 +15,7 @@
 	  	  <excludes>
           <exclude>**/target/</exclude>
         </excludes>
-        <outputDirectory></outputDirectory>
+        <outputDirectory>../target</outputDirectory>
     </fileSet>
   </fileSets>
 </assembly>
