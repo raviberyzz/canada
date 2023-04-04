@@ -40,7 +40,7 @@
     <!-- ====================================================================== -->
     <build>
         <sourceDirectory>src/main/content/jcr_root</sourceDirectory>
-        <plugins>
+         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -66,7 +66,6 @@
                         <goals>
                             <goal>single</goal>
                         </goals>
-                        <id>default</id>
                         <configuration>
                             <descriptors>
                                 <descriptor>assembly.xml</descriptor>
@@ -74,47 +73,8 @@
                             <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                     </execution>
-                    <execution>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <id>source</id>
-						<configuration>
-							<descriptors>
-								<descriptor>assembly-source.xml</descriptor>
-							</descriptors>
-							<appendAssemblyId>true</appendAssemblyId>
-							<finalName>${parent.artifactId}-${parent.version}-Sources</finalName>   
-                            <outputDirectory>../target</outputDirectory>
-						</configuration>
-					</execution>
                 </executions>
             </plugin>
-            <!-- <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resource-source</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-    
-                        <configuration>
-                            <outputDirectory>../target</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target</directory>
-                                    <includes>
-                                        <include>${parent.artifactId}-${parent.version}-Sources-source.zip</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-               </executions>
-            </plugin> -->
         </plugins>
     </build>
 

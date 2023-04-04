@@ -8,14 +8,14 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>../${basedir}</directory>
+      <directory>${basedir}</directory>
       <includes>
         <include>**/*</include>
       </includes>
 	  	  <excludes>
           <exclude>**/target/</exclude>
         </excludes>
-        <outputDirectory>../target</outputDirectory>
+      <outputDirectory></outputDirectory>
     </fileSet>
   </fileSets>
-</assembly>
+</assembly> 
