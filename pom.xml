@@ -165,7 +165,7 @@
                     <version>${frontend-maven-plugin.version}</version>
                     <configuration>
 						<nodeDownloadRoot>http://artifactory.sunlifecorp.com/artifactory/ext-vendor-release/org/nodejs/node/</nodeDownloadRoot>
-                        <nodeVersion>v16.17.0</nodeVersion>
+                        <nodeVersion>v11.1.0</nodeVersion>
                     </configuration>
                     <executions>
                         <execution>
