@@ -24,11 +24,7 @@
     <parent>
         <groupId>ca.sunlife.web.cms</groupId>
         <artifactId>web-cms-aem-ca</artifactId>
-<<<<<<< HEAD
         <version>2.08.1-SNAPSHOT</version>
-=======
-        <version>2.24.0-SNAPSHOT</version>
->>>>>>> 7d7cf11445c2a60deb7a9cd9add097f1c8dfb07a
         <relativePath>../pom.xml</relativePath>
     </parent>
 
