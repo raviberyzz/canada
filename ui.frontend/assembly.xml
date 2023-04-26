@@ -5,14 +5,14 @@
     <formats>
         <format>zip</format>
     </formats>
-    <includeBaseDirectory>true</includeBaseDirectory>
+    <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>${basedir}\ui.frontend\dist</directory>
+            <directory>${basedir}/dist</directory>
             <includes>
                 <include>**/*</include>
             </includes>
-            <!-- <outputDirectory>${basedir}\ui.frontend\target</outputDirectory> -->
+            <outputDirectory></outputDirectory>
         </fileSet>
     </fileSets>
-</assembly> 
+</assembly>
