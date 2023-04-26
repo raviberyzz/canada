@@ -19,7 +19,7 @@
     <groupId>ca.sunlife.web.cms</groupId>
     <artifactId>web-cms-aem-ca</artifactId>
     <packaging>pom</packaging>
-    <version>2.23.0-SNAPSHOT</version>
+    <version>2.08.1-SNAPSHOT</version>
     <name>CMS AEM ca application project</name>
     <description>CMS AEM ca application project</description>
 
@@ -57,7 +57,9 @@
         <bnd.version>5.1.2</bnd.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <componentGroupName>CMS AEM ca application project</componentGroupName>
+        <componentGroupName>CMS AEM ca application</componentGroupName>
+         <node.version>v16.17.0</node.version>
+        <assembly.skipAssembly>false</assembly.skipAssembly>
     </properties>
 
     <build>
@@ -132,6 +134,7 @@
 							<appendAssemblyId>true</appendAssemblyId>
 							<finalName>${project.artifactId}-${project.version}-Sources</finalName>  
                             <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
+                            <skipAssembly>${assembly.skipAssembly}</skipAssembly>
 						</configuration>
 					</execution>
                     <execution>
@@ -166,7 +169,7 @@
                     <version>${frontend-maven-plugin.version}</version>
                     <configuration>
 						<nodeDownloadRoot>http://artifactory.sunlifecorp.com/artifactory/ext-vendor-release/org/nodejs/node/</nodeDownloadRoot>
-                        <nodeVersion>v16.17.0</nodeVersion>    
+                         <nodeVersion>${node.version}</nodeVersion> 
                     </configuration>
                     <executions>
                         <execution>
@@ -323,7 +326,7 @@ Bundle-DocURL:
                     <groupId>org.apache.jackrabbit</groupId>
                     <artifactId>filevault-package-maven-plugin</artifactId>
                     <extensions>true</extensions>
-                    <version>1.0.4</version>
+                    <version>1.1.6</version>
                     <configuration>
                         <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
                     </configuration>
