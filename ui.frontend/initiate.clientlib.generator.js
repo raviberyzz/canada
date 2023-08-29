@@ -16,9 +16,8 @@ if (!fs.existsSync(configPath)) {
 
 var clientLibConf = require(configPath);
 libs = clientLibConf.libs;
-console.log('libs===>>>', libs);
 delete clientLibConf.libs;
 
 clientlib(libs, clientLibConf, function () {
-  console.log("clientlib generator has finished for "+libs.length+" modules");
+  console.log("clientlib generator has finished for " + libs.length + " modules");
 });
