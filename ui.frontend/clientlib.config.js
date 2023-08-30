@@ -14,62 +14,63 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
- const path = require('path');
- const modulesManager = require('./conf/modulesManger').instance;
- const ClientLibManager = require('./conf/clientlibManger').clientLibManager;
- 
- const BUILD_DIR = path.join(__dirname, 'dist');
- const CLIENTLIB_DIR = path.join(
-   __dirname,
-   '..',
-   'ui.apps',
-   'src',
-   'main',
-   'content',
-   'jcr_root',
-   'apps',
-   'sunlife',
-   'ca',
-   'clientlibs'
- );
- 
- const allModuleDefinations = modulesManager.getModules();
- 
- const clientLibsConfig = new ClientLibManager({
-   modules: allModuleDefinations
- });
- 
- const clientlibsConfigObj = clientLibsConfig.getClientlibs();
- 
- const libsBaseConfig = {
-   allowProxy: true,
-   serializationFormat: 'xml'
- };
- 
- function getLibs() {
-   let libs = [];
- 
-   let clientlibsArr = Object.keys(clientlibsConfigObj);
- 
-     for (let i = 0; i < clientlibsArr.length; i++) {
-         const clientlib = clientlibsArr[i];
-         let clientlibConfig = clientlibsConfigObj[clientlib];
-         clientlibConfig.outputPath = path.join(
-           __dirname,
-           '..',
-           ...clientlibConfig.outputPath.split('/')
-         );
-         libs.push({...libsBaseConfig, ...clientlibConfig})
-     }
- 
-     return libs;
- }
- 
- // Config for `aem-clientlib-generator`
- module.exports = {
-   context: BUILD_DIR,
-   clientLibRoot: CLIENTLIB_DIR,
-   verbose: true,
-   libs: getLibs()
- };
- 
+const path = require('path');
+const modulesManager = require('./conf/modulesManger').instance;
+const ClientLibManager = require('./conf/clientlibManger').clientLibManager;
+
+const tenant = 'ca';
+const BUILD_DIR = path.join(__dirname, 'dist');
+const CLIENTLIB_DIR = path.join(
+  __dirname,
+  '..',
+  'ui.apps',
+  'src',
+  'main',
+  'content',
+  'jcr_root',
+  'apps',
+  'sunlife',
+  tenant,
+  'clientlibs'
+);
+
+const allModuleDefinations = modulesManager.getModules();
+
+const clientLibsConfig = new ClientLibManager({
+  modules: allModuleDefinations,
+  tenant: tenant
+});
+
+const clientlibsConfigObj = clientLibsConfig.getClientlibs();
+
+const libsBaseConfig = {
+  allowProxy: true,
+  serializationFormat: 'xml'
+};
+
+function getLibs() {
+  let libs = [];
+
+  let clientlibsArr = Object.keys(clientlibsConfigObj);
+
+  for (let i = 0; i < clientlibsArr.length; i++) {
+    const clientlib = clientlibsArr[i];
+    let clientlibConfig = clientlibsConfigObj[clientlib];
+    clientlibConfig.outputPath = path.join(
+      __dirname,
+      '..',
+      ...clientlibConfig.outputPath.split('/')
+    );
+    libs.push({ ...libsBaseConfig, ...clientlibConfig })
+  }
+
+  return libs;
+}
+
+// Config for `aem-clientlib-generator`
+module.exports = {
+  context: BUILD_DIR,
+  clientLibRoot: CLIENTLIB_DIR,
+  verbose: true,
+  libs: getLibs()
+};

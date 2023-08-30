@@ -2,12 +2,16 @@ const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
 
+
 const ClientLibManager = class {
     constructor(params) {
         this.clientlibConfig = {};
         this.modules = params.modules;
         this.explicitCLConfig = {};
-        this.processModules();  
+        this.tenant = params.tenant;
+        this._isExplicitModule = false;
+        this._isComponentModule = false;
+        this.processModules();
     }
 
     processModules() {
@@ -15,9 +19,14 @@ const ClientLibManager = class {
         for (let i = 0; i < modules.length; i++) {
             const module = modules[i];
             this.clientlibConfig[module] = {};
+            this.setModuleType(module);
             this._getExplicitConfigs(module);
         }
-        
+
+    }
+
+    setModuleType(module) {
+        this._isComponentModule = this.modules[module].moduleType === 'components' ? true : false;
     }
 
     configureClientlibObj(module) {
@@ -29,8 +38,8 @@ const ClientLibManager = class {
         this._updateCLAssests(module);
     }
 
-    _getCLRoot(module){
-        if(this.modules[module].moduleType==='prerequisite') {
+    _getCLRoot(module) {
+        if (!this._isComponentModule) {
             return this._getPrerequisiteCLPath(module);
         } else {
             return this._getComponentCLPath(module);
@@ -39,7 +48,7 @@ const ClientLibManager = class {
 
     _getExplicitProperty(type) {
         let returnPropArray = [];
-        if(this.explicitCLConfig[type]) {
+        if (this.explicitCLConfig[type]) {
             returnPropArray.push(...this.explicitCLConfig[type].split(','));
         }
         return returnPropArray;
@@ -54,21 +63,49 @@ const ClientLibManager = class {
     }
 
     _updateCLName(module) {
+        if (this._isExplicitModule) {
+            this.clientlibConfig[module]['name'] = this.explicitCLConfig.name;
+            return;
+        }
         this.clientlibConfig[module]['name'] = module;
     }
-    
+
     _updateCLOutputPath(module) {
-        const clientLibPath = this.modules[module].moduleType==='prerequisite'? this._getPrerequisiteCLPath(module) : this._getComponentCLPath(module);
+        const clientlibRootDir = this.modules[module].appClientlibRootDir;
+        const clientLibPath = this._isComponentModule ? `${clientlibRootDir}/clientlibs` : `${clientlibRootDir}/`;
         this.clientlibConfig[module]['outputPath'] = clientLibPath;
     }
 
     _updateCLCategory(module) {
         const categoriesArr = [];
-        if(this.modules[module].moduleType==='components') {
-            categoriesArr.push(`sunlife.ca.component`,`sunlife.ca.components.content.${module}`);
+
+        if (this._isExplicitModule || this.modules[module].isPrefixModule) {
+
+            categoriesArr.push(...this._getExplicitProperty('categories'));
+
+            if (this.modules[module].isReactComp) {
+                categoriesArr.push(`sunlife.${this.tenant}-react-component`);
+            }
+
+            if (this._isComponentModule) {
+                categoriesArr.push(`sunlife.${this.tenant}-components`, `sunlife.${this.tenant}-component.${module}`);
+            }
+
+            this.clientlibConfig[module]['categories'] = categoriesArr;
+            return
         }
-        categoriesArr.push(`sunlife.ca.${module}`, ...this._getExplicitProperty('categories'));
-       
+
+
+        if (this._isComponentModule) {
+            categoriesArr.push(`sunlife.${this.tenant}.component`, `sunlife.${this.tenant}.components.content.${module}`);
+        }
+
+        if (this.modules[module].isReactComp) {
+            categoriesArr.push(`sunlife.${this.tenant}.react-component`);
+        }
+
+        categoriesArr.push(`sunlife.${this.tenant}.${module}`, ...this._getExplicitProperty('categories'));
+
         this.clientlibConfig[module]['categories'] = categoriesArr;
     }
 
@@ -90,15 +127,15 @@ const ClientLibManager = class {
             css: this._getAssetInfo('css', module)
         };
 
-        if(this.modules[module].isContainResources) {
-            this.clientlibConfig[module]['assets']['resources'] = {base: "resources", files:['*.eot', '*.svg','*.ttf', '*.woff', '*.woff2','*.png','*.otf', '**/*.eot', '**/*.svg','**/*.ttf', '**/*.woff', '**/*.woff2','**/*.png','**/*.otf']};
+        if (this.modules[module].isContainResources) {
+            this.clientlibConfig[module]['assets']['resources'] = { base: "resources", files: ['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2', '*.png', '*.otf', '**/*.eot', '**/*.svg', '**/*.ttf', '**/*.woff', '**/*.woff2', '**/*.png', '**/*.otf'] };
         }
     }
 
     _getAssetInfo(type, module, configs) {
         return {
             cwd: this.modules[module].distClientlibDir,
-            files: [`*.${type}`,`**/*.${type}`],
+            files: [`*.${type}`, `**/*.${type}`],
             flatten: false,
             ...configs
         }
@@ -106,28 +143,38 @@ const ClientLibManager = class {
 
     _getExplicitConfigs(module) {
         const configPath = path.join(__dirname, '..', this.modules[module].currentModuleRootDir, 'context.json');
-        
-        if(fs.existsSync(configPath)) {
+
+        if (fs.existsSync(configPath)) {
             let fileContent = null,
-            explicitConfigs = null;
+                explicitConfigs = null;
             try {
-                fileContent = fs.readFileSync(configPath, { encoding:'utf8'});
+                fileContent = fs.readFileSync(configPath, { encoding: 'utf8' });
                 explicitConfigs = JSON.parse(fileContent);
+                this._isExplicitModule = explicitConfigs.isExplicitModule ? true : false;
                 this.explicitCLConfig = { ...explicitConfigs }
-            } 
+            }
             catch (err) {
                 console.log('Error while reading context.json at -', configPath, err);
                 return;
             }
         } else {
             this.explicitCLConfig = {};
+            this._isExplicitModule = false;
         }
 
         this.configureClientlibObj(module);
     }
-    
+
     getClientlibs() {
         return this.clientlibConfig;
+    }
+
+    get isExplicitModule() {
+        return this._isExplicitModule;
+    }
+
+    set isExplicitModule(flag) {
+        this._isExplicitModule = flag;
     }
 };
 
