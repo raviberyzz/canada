@@ -1,6 +1,6 @@
 {
     "categories": "sunlife.ca-site",
-    "embed": "sunlife.core-vendor.v1, sunlife.core-dependencies, sunlife.core-base, sunlife.core-global-prerequisite, sunlife.core-components, sunlife.core.author.commons,sunlife.ca-base",
+    "embed": "sunlife.core-vendor.jquery.v1,sunlife.core-vendor.bootstrap.v1, sunlife.core-vendor.v1, sunlife.core-dependencies, sunlife.core-base, sunlife.core-global-prerequisite, sunlife.core-components, sunlife.core.author.commons,sunlife.ca-base",
     "name": "ca-site",
     "isExplicitModule": true
 }
