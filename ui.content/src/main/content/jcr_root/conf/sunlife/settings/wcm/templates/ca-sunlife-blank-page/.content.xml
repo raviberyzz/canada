@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2019-12-02T05:59:13.569-05:00"
         cq:lastModifiedBy="admin"
-        cq:templateType="/conf/sunlife/settings/wcm/template-types/base-page"
+        cq:templateType="/conf/sunlife/settings/wcm/template-types/core-base-page"
         jcr:description="Sunlife CA Blank Page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sunlife CA Blank Page"

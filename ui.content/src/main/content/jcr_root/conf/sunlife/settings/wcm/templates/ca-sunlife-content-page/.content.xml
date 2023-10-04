@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:templateType="/conf/sunlife/settings/wcm/template-types/base-page"
+        cq:templateType="/conf/sunlife/settings/wcm/template-types/core-base-page"
         jcr:description="Template used to create Content pages for Canada"
         jcr:primaryType="cq:PageContent"
         jcr:title="CA Sunlife Content Page"

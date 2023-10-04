@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2019-12-02T12:33:08.677+05:30"
         cq:lastModifiedBy="admin"
-        cq:templateType="/conf/sunlife/settings/wcm/template-types/sunlife-experience-fragment"
+        cq:templateType="/conf/sunlife/settings/wcm/template-types/core-sunlife-experience-fragment"
         jcr:primaryType="cq:PageContent"
         jcr:title="CA Sunlife Experience Fragment"
         status="enabled"/>
