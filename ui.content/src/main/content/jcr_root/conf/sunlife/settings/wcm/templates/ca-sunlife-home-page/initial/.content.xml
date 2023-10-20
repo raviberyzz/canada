@@ -11,14 +11,14 @@
             <experiencefragment_header
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="sunlife/ca/components/content/ca-experiencefragment"
-                fragmentPath="/content/experience-fragments/sunlife/external/ca/en/header/master"/>
+                fragmentPath=""/>
             <layout_container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="sunlife/ca/components/content/ca-layout-container"/>
             <experiencefragment_footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="sunlife/ca/components/content/ca-experiencefragment"
-                fragmentPath="/content/experience-fragments/sunlife/external/ca/en/footer/master"/>
+                fragmentPath=""/>
         </root>
     </jcr:content>
 </jcr:root>
