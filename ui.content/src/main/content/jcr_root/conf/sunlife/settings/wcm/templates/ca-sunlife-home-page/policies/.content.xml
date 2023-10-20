@@ -20,7 +20,14 @@
                             <ca-title
                                 cq:policy="sunlife/ca/components/content/ca-title/policy_title"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                sling:resourceType="wcm/core/components/policies/mapping">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <title
+                                        cq:policy="sunlife/ca/components/content/ca-title/v1/title/policy_1697770922017"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </ca-title>
                             <ca-container
                                 cq:policy="sunlife/ca/components/content/ca-container/policy_container"
                                 jcr:primaryType="nt:unstructured"
