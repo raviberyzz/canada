@@ -211,3 +211,7 @@
     outline-offset: 4px;
 }
 
+.desktop-primary-navigation .navigation {
+    height: 80px;
+}
+
