@@ -1659,6 +1659,15 @@
                             </cq:styleGroups>
                         </policy_tabs>
                     </tabs>
+					<ca-accordion jcr:primaryType="nt:unstructured">
+						<v1 jcr:primaryType="nt:unstructured">
+							<accordion jcr:primaryType="nt:unstructured">								
+								<policy_27140036200900 jcr:lastModified="{Date}2023-11-30T15:36:01.373-05:00" jcr:lastModifiedBy="admin" jcr:primaryType="nt:unstructured" jcr:title="ca-accordion policy" sling:resourceType="wcm/core/components/policy/policy" allowedHeadingElements="[h2,h3,h4,h5,h6]" components="/apps/sunlife/ca/components/content/ca-text/v1/text" headingElement="h3">
+								<jcr:content jcr:primaryType="nt:unstructured"/>
+								</policy_27140036200900>
+							</accordion>
+						</v1>
+					</ca-accordion>
                     <accordion jcr:primaryType="nt:unstructured">
                         <policy_accordion
                             cq:styleDefaultClasses="accordion-container"
