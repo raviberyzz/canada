@@ -1668,6 +1668,15 @@
 							</accordion>
 						</v1>
 					</ca-accordion>
+					<ca-tabs jcr:primaryType="nt:unstructured">
+						<v1 jcr:primaryType="nt:unstructured">
+							<tabs jcr:primaryType="nt:unstructured">								
+								<policy_tabs jcr:primaryType="nt:unstructured" jcr:title="ca-tabs policy" sling:resourceType="wcm/core/components/policy/policy"  components="[/apps/sunlife/ca/components/content/ca-text/v1/text,/apps/sunlife/ca/components/content/ca-accordion/v1/accordion,/apps/sunlife/ca/components/content/ca-button/v1/button,/apps/sunlife/ca/components/content/ca-container/v1/container,/apps/sunlife/ca/components/content/ca-embed/v1/embed,/apps/sunlife/ca/components/content/ca-experiencefragment/v1/experiencefragment,/apps/sunlife/ca/components/content/ca-hero-banner/v1/hero-banner,/apps/sunlife/ca/components/content/ca-html-component/v1/html-component,/apps/sunlife/ca/components/content/ca-image/v1/image,/apps/sunlife/ca/components/content/ca-layout-container/v1/layout-container,/apps/sunlife/ca/components/content/ca-link-list/v1/link-list,/apps/sunlife/ca/components/content/ca-separator/v1/separator,/apps/sunlife/ca/components/content/ca-title/v1/title]" >
+								<jcr:content jcr:primaryType="nt:unstructured"/>
+								</policy_tabs>
+							</tabs>
+						</v1>
+					</ca-tabs>
                     <accordion jcr:primaryType="nt:unstructured">
                         <policy_accordion
                             cq:styleDefaultClasses="accordion-container"
