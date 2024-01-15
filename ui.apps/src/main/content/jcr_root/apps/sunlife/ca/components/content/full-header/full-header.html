@@ -18,13 +18,6 @@
   <sly data-sly-test.searchPlaceholder="${listModel.searchPlaceholder}" />
   <sly data-sly-test.searchButton="${listModel.searchButton}" />
   <sly data-sly-test.buttonTarget="#${listModel.signinUrl}" />
-  <sly data-sly-test.utilitySupportLabel="${properties.utilitySupportLabel}"/>
-  <sly data-sly-test.utilityLanguageLabel="${properties.utilityLanguageLabel}"/>
-  <sly data-sly-test.mainNavLabel="${properties.mainNavLabel}"/>
-  <sly data-sly-test.mobileSearchLabel="${properties.mobileSearchLabel}"/>
-  <sly data-sly-test.srCloseText="${properties.srCloseText}"/>
-  <sly data-sly-test.srNavMenuText="${properties.srNavMenuText}"/>
-  <sly data-sly-test.srMobileCloseText="${properties.srMobileCloseText}"/>
 
   <div class="slf-header-wrapper">
     <div data-sly-test="${listFromSignin == 'signintrue' && listModel.signinTarget == 'modal'}" class="desktop-sign-in">
@@ -39,7 +32,7 @@
         <div class="search-bar-wrapper collapse" data-section="header-search" id="sun-search">
           <div class="search-box">
             <div class="close-div"><a data-toggle="collapse" aria-expanded="true" href="#sun-search"> <span
-                  class="sr-only">${srCloseText || 'Close search'}</span> <span class="fa fa-remove collapse-x">&nbsp;</span>
+                  class="sr-only">${properties.srCloseText || 'Close search'}</span> <span class="fa fa-remove collapse-x">&nbsp;</span>
               </a></div>
             <div class="global-search">
 			 <sly data-sly-test="${searchPlaceholder == 'coveoSearch'}">
@@ -143,7 +136,7 @@
 			<div class="col-md-6 col-lg-6">
           
 				<div class="utility-nav-wrapper" data-section="header-utility-nav">
-				<div data-sly-test="${listFromNav == 'true'}" class="utility-nav-links" role="navigation" aria-label="${utilitySupportLabel || 'Helpful links'}">
+				<div data-sly-test="${listFromNav == 'true'}" class="utility-nav-links" role="navigation" aria-label="${properties.utilitySupportLabel || 'Helpful links'}">
 				  <ul>
 					<sly data-sly-list.links="${listModel.navlinks}">
 					  <li data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
@@ -152,7 +145,7 @@
 					</sly>
 				  </ul>
 				</div>
-				<div data-sly-test="${listFromSearch == 'searchtrue' || listFromRegion == 'regiontrue'}" class="utility-nav-links" role="navigation" aria-label="${utilityLanguageLabel || 'Region & Language Selection, Search Function'}">
+				<div data-sly-test="${listFromSearch == 'searchtrue' || listFromRegion == 'regiontrue'}" class="utility-nav-links" role="navigation" aria-label="${properties.utilityLanguageLabel || 'Region & Language Selection, Search Function'}">
 				  <ul>
 					<li data-sly-test="${listFromRegion == 'regiontrue'}" id="language-btn-container">
 					  <div class="lang-btn" id="language-btn" role="button" data-toggle="collapse"
@@ -180,7 +173,7 @@
 			  <div class="col-md-9 col-lg-9">
 			  
 				<div class="utility-nav-wrapper" data-section="header-utility-nav">
-				<div data-sly-test="${listFromNav == 'true'}" class="utility-nav-links" role="navigation" aria-label="${utilitySupportLabel || 'Helpful links'}">
+				<div data-sly-test="${listFromNav == 'true'}" class="utility-nav-links" role="navigation" aria-label="${properties.utilitySupportLabel || 'Helpful links'}">
 				  <ul>
 					<sly data-sly-list.links="${listModel.navlinks}">
 					  <li data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=links.linkUrl}">
@@ -189,7 +182,7 @@
 					</sly>
 				  </ul>
 				</div>
-				<div data-sly-test="${listFromSearch == 'searchtrue' || listFromRegion == 'regiontrue'}" class="utility-nav-links" role="navigation" aria-label="${utilityLanguageLabel || 'Region & Language Selection, Search Function'}">
+				<div data-sly-test="${listFromSearch == 'searchtrue' || listFromRegion == 'regiontrue'}" class="utility-nav-links" role="navigation" aria-label="${properties.utilityLanguageLabel || 'Region & Language Selection, Search Function'}">
 				  <ul>
 					<li data-sly-test="${listFromRegion == 'regiontrue'}" id="language-btn-container">
 					  <div class="lang-btn" id="language-btn" role="button" data-toggle="collapse"
@@ -221,7 +214,7 @@
           
           <div data-sly-test="${listFromMeganav == 'meganavtrue'}" class="desktop-navigation no-gutter">
             <div class="desktop-mega-menu clearfix">
-              <div class="desktop-primary-navigation" data-section="nav-main" role="navigation" aria-label="${mainNavLabel || 'main navigation'}">
+              <div class="desktop-primary-navigation" data-section="nav-main" role="navigation" aria-label="${properties.mainNavLabel || 'main navigation'}">
                 <ul class="nav navbar-nav navbar-left navbar-new main-nav nav-auth focus-exp focus-tr">
                   <sly data-sly-list.head="${listModel.meganavlinks.listChildren}">
                     <li class="dropdown nav-item navigation ${head.linkStyle}" data-sly-use.utilityListParsing = "${'sunlife/core/components/content/link-list/linklist-parsing.js' @ path=head.linkUrl}">
@@ -297,7 +290,7 @@
         <div class="col-xs-12 mobile-header-navbar  white-shade">
           <div class="hamburger-menu" id="hamburgerMenu">
             <button class="btn navbar-toggle pull-left" type="button" aria-expanded="false">
-              <span class="sr-only">${srNavMenuText || 'Navigation Menu'}</span>
+              <span class="sr-only">${properties.srNavMenuText || 'Navigation Menu'}</span>
               <span class="icon-bar" id="a1">&nbsp;</span>
               <span class="icon-bar" id="a2">&nbsp;</span>
               <span class="icon-bar" id="a3">&nbsp;</span>
@@ -330,7 +323,7 @@
         <div class="hamburger-menu-wrapper inactive">
           <div class="close-hamburger-menu">
           <button type="button" class="btn close-hamburger" id="close-hamburger">
-            <span class="sr-only">${srMobileCloseText || 'Close Navigation Menu'}</span>
+            <span class="sr-only">${properties.srMobileCloseText || 'Close Navigation Menu'}</span>
             <span class="fa fa-remove"></span>
           </button>
           </div>
@@ -355,7 +348,7 @@
                 <div class="input-wrapper">
                   <span class="fa fa-search search-icon-mobile" type="submit"></span>
                   <input  data-parsley-required-message="! Please enter a search term" data-parsley-required="data-parsley-required" name="q" id="q-top-mobile" type="text" class="search-field" placeholder="${searchPlaceholder}"
-                    autocomplete="off" aria-label="${mobileSearchLabel || 'mobile search bar'}" />
+                    autocomplete="off" aria-label="${properties.mobileSearchLabel || 'mobile search bar'}" />
                   <div class="search-autocomplete-mobile">
                     <ul class="search-autocomplete-list-mobile" style="display: none;" aria-hidden="true">
                     </ul>
