@@ -914,6 +914,41 @@
                                                 fieldLabel="Skip to footer label"
                                                 name="./skipToFooterLabel"
                                                 required="true"/>
+                                            <utilitySupportLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Utility nav support aria label"
+                                                name="./utilitySupportLabel"/>
+                                            <utilityLanguageLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Utility nav language aria label"
+                                                name="./utilityLanguageLabel"/>
+                                            <mainNavLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Main nav aria label"
+                                                name="./mainNavLabel"/>
+                                            <mobileSearchLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Mobile search aria label"
+                                                name="./mobileSearchLabel"/>
+                                            <srCloseText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Screen reader text for search close button"
+                                                name="./srCloseText"/>
+                                            <srNavMenuText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Screen reader text for mobile navigation"
+                                                name="./srNavMenuText"/>
+                                            <srMobileCloseText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Screen reader text for mobile navigation close button"
+                                                name="./srMobileCloseText"/>
                                         </items>
                                     </column>
                                 </items>
