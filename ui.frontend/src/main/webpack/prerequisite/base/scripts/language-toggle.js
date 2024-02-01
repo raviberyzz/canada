@@ -86,7 +86,7 @@ $(document).ready(function () {
 
             if (linkRow.length == 0 && linkCanRef != null) {
                 if (utag_data.page_language == 'en') {
-                    $('.desktop-region-language-menu-wrapper .content-language li a').first().attr('href', linkCanRef);
+                    $('#sl-dropdown-language-utility .dropdown-menu li a').first().attr('href', linkCanRef);
                     $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li a').first().attr('href', linkCanRef);
                     $('.desktop-region-language-menu-wrapper .content-language li:nth-child(2)').children('a').attr('href', "/content/sunlife/external/ca/fr/error/language-error");
                     $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li:nth-child(2)').children('a').attr('href', "/content/sunlife/external/ca/fr/error/language-error");
@@ -94,7 +94,7 @@ $(document).ready(function () {
                 if (utag_data.page_language == 'fr') {
                     $('.desktop-region-language-menu-wrapper .content-language li a').first().attr('href', "/content/sunlife/external/ca/en/error/language-error");
                     $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li a').first().attr('href', "/content/sunlife/external/ca/en/error/language-error");
-                    $('.desktop-region-language-menu-wrapper .content-language li:nth-child(2)').children('a').attr('href', linkCanRef);
+                    $('#sl-dropdown-language-utility .dropdown-menu li:nth-child(2)').children('a').attr('href', linkCanRef);
                     $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li:nth-child(2)').children('a').attr('href', linkCanRef);
                 }
             }
