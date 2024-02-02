@@ -10,15 +10,15 @@
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <experiencefragment_header
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="sunlife/ca/components/content/ca-experiencefragment"
-                fragmentPath=""/>
+                sling:resourceType="sunlife/ca/components/content/ca-experiencefragment/v1/experiencefragment"
+                fragmentPath="/content/experience-fragments/sunlife/external/ca/en/header/master"/>
             <layout_container
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="sunlife/ca/components/content/ca-layout-container"/>
+                sling:resourceType="sunlife/ca/components/content/ca-layout-container/v1/layout-container"/>
             <experiencefragment_footer
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="sunlife/ca/components/content/ca-experiencefragment"
-                fragmentPath=""/>
+                sling:resourceType="sunlife/ca/components/content/ca-experiencefragment/v1/experiencefragment"
+                fragmentPath="/content/experience-fragments/sunlife/external/ca/en/footer/master"/>
         </root>
     </jcr:content>
 </jcr:root>
