@@ -1,5 +1,9 @@
+/**
+* Function to get the language toggle links and update the href based on the current page alternative or canonical page value.
+* If the page is error page then it will update the href based on the error page value i.e /content/sunlife/external/ca/en/error/language-error.
+* Otherwise, retrieve the canonical or alternate page value and update the href based on the language.
+*/
 $(document).ready(function () {
-    //Code for Language toggle starts //
     var langIndex = 0;
 	var langIndexMobile = 0;
     var linkRow = [];
@@ -91,6 +95,4 @@ $(document).ready(function () {
             }
         }
     }
-    //Code for Language toggle ends //  
-
 });
