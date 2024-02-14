@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema" mode="merge"/>
     <filter root="/conf/sunlife/settings/wcm/policies" mode="update"/>
     <filter root="/conf/sunlife/settings/wcm/policies/wcm/foundation/components/responsivegrid/policy_sunlife_ca_home"/>
     <filter root="/conf/sunlife/settings/wcm/policies/wcm/foundation/components/responsivegrid/policy_sunlife_ca_content"/>
