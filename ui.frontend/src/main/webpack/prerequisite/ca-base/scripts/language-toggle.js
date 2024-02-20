@@ -1,9 +1,12 @@
+/**
+* Function to get the language toggle links and update the href based on the current page alternative or canonical page value.
+* If the page is error page then it will update the href based on the error page value i.e /content/sunlife/external/ca/en/error/language-error.
+* Otherwise, retrieve the canonical or alternate page value and update the href based on the language.
+*/
 $(document).ready(function () {
-    //Code for Language toggle starts //
     var langIndex = 0;
 	var langIndexMobile = 0;
     var linkRow = [];
-    //var linkAltRef = 0;
     var linkCanRef = null;
     var pageSubcategory = utag_data.page_subcategory;
     var pageAdvisoryType = utag_data.page_advisor_type;
@@ -11,10 +14,13 @@ $(document).ready(function () {
     if (typeof pageType != 'undefined') {
         pageErrorType = pageType;
     }
+     const $languageLinks = $('#sl-dropdown-language-utility .dropdown-menu li a');
+     const $secondItemLanguageLinks = $('#sl-dropdown-language-utility .dropdown-menu li:nth-child(2)').children('a');
+     const $enErrorPagePath = "/content/sunlife/external/ca/en/error/language-error";
+     const $frErrorPagePath = "/content/sunlife/external/ca/fr/error/language-error";
 
     $.each($('link'), function (index, value) {
         if (value.rel == "alternate") {
-            //linkAltRef = linkAltRef + 1;
             linkRow.push(value.href);
         } else if (value.rel == "canonical") {
             linkCanRef = value.href;
@@ -25,14 +31,14 @@ $(document).ready(function () {
     var lastPart = newsUrl[newsUrl.length - 2];
 
     if (pageSubcategory == "newsroom" && !isNaN(lastPart) && lastPart.length > 4) {
-        $('.desktop-region-language-menu-wrapper .content-language li a').each(function () {
+        $languageLinks.each(function () {
             if (langIndex < linkRow.length) {
                 var url = linkRow[langIndex].split('/');
                 $(this).attr('href', linkRow[langIndex].substr(0, linkRow[langIndex].lastIndexOf('/', linkRow[langIndex].lastIndexOf('/') - 1) + 1));
                 langIndex = langIndex + 1;
             }
         });
-        $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li a').each(function () {
+        $languageLinks.each(function () {
             if (langIndexMobile < linkRow.length) {
                 var url = linkRow[langIndexMobile].split('/');
                 $(this).attr('href', linkRow[langIndexMobile].substr(0, linkRow[langIndexMobile].lastIndexOf('/', linkRow[langIndexMobile].lastIndexOf('/') - 1) + 1));
@@ -41,38 +47,35 @@ $(document).ready(function () {
         });
     } else if (pageAdvisoryType == "ADVISOR" || pageAdvisoryType == "CORP") {
         if (utag_data.page_language == 'en') {
-            $('.desktop-region-language-menu-wrapper .content-language li a').first().attr('href', linkCanRef);
-            $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li a').first().attr('href', linkCanRef);
-            $('.desktop-region-language-menu-wrapper .content-language li:nth-child(2)').children('a').attr('href', linkCanRef.replace("/E/", "/F/"));
-            $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li:nth-child(2)').children('a').attr('href', linkCanRef.replace("/E/", "/F/"));
+            $languageLinks.first().attr('href', linkCanRef);
+            $secondItemLanguageLinks.attr('href', linkCanRef.replace("/E/", "/F/"));
         }
         if (utag_data.page_language == 'fr') {
-            $('.desktop-region-language-menu-wrapper .content-language li a').first().attr('href', linkCanRef.replace("/F/", "/E/"));
-            $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li a').first().attr('href', linkCanRef.replace("/F/", "/E/"));
-            $('.desktop-region-language-menu-wrapper .content-language li:nth-child(2)').children('a').attr('href', linkCanRef);
-            $('.mobile-header .mobile-region-language-menu-wrapper .language-tab li:nth-child(2)').children('a').attr('href', linkCanRef);
+            $languageLinks.first().attr('href', linkCanRef.replace("/F/", "/E/"));
+            $secondItemLanguageLinks.attr('href', linkCanRef);
         }
 
     } else {
 
         if (pageErrorType === "error-page") {
+
             if (utag_data.page_language == 'en') {
-                $('.#sl-dropdown-language-utility .dropdown-menu li a').first().attr('href', "/content/sunlife/external/ca/en/error/language-error");
-                $('#sl-dropdown-language-utility .dropdown-menu li:nth-child(2)').children('a').attr('href', document.referrer);
+                $languageLinks.first().attr('href', $enErrorPagePath);
+                $secondItemLanguageLinks.attr('href', document.referrer);
             }
             if (utag_data.page_language == 'fr') {
-                $('#sl-dropdown-language-utility .dropdown-menu li a').first().attr('href', document.referrer);
-                $('#sl-dropdown-language-utility .dropdown-menu li:nth-child(2)').children('a').attr('href', "/content/sunlife/external/ca/fr/error/language-error");
+                $languageLinks.first().attr('href', document.referrer);
+                $secondItemLanguageLinks.attr('href', $frErrorPagePath);
             }
         } else {
             if (linkRow.length > 0) {
-                $('#sl-dropdown-language-utility .dropdown-menu li a').each(function () {
+                $languageLinks.each(function () {
                     if (langIndex < linkRow.length) {
                         $(this).attr('href', linkRow[langIndex]);
                         langIndex = langIndex + 1;
                     }
                 });
-                $('#sl-dropdown-language-utility .dropdown-menu li a').each(function () {
+                $languageLinks.each(function () {
                     if (langIndexMobile < linkRow.length) {
                         $(this).attr('href', linkRow[langIndexMobile]);
                         langIndexMobile = langIndexMobile + 1;
@@ -80,18 +83,16 @@ $(document).ready(function () {
                 });
             }
 
-            if (linkRow.length == 0 && linkCanRef != null) {
+            if (linkRow.length == 0 && linkCanRef !== null) {
                 if (utag_data.page_language == 'en') {
-                    $('#sl-dropdown-language-utility .dropdown-menu li a').first().attr('href', linkCanRef);
-                    $('#sl-dropdown-language-utility .dropdown-menu li:nth-child(2)').children('a').attr('href', "/content/sunlife/external/ca/fr/error/language-error");
+                    $languageLinks.first().attr('href', linkCanRef);
+                    $secondItemLanguageLinks.attr('href', $frErrorPagePath);
                 }
                 if (utag_data.page_language == 'fr') {
-                    $('#sl-dropdown-language-utility .dropdown-menu li a').first().attr('href', "/content/sunlife/external/ca/en/error/language-error");
-                    $('#sl-dropdown-language-utility .dropdown-menu li:nth-child(2)').children('a').attr('href', linkCanRef);
+                    $languageLinks.first().attr('href', $enErrorPagePath);
+                    $secondItemLanguageLinks.attr('href', linkCanRef);
                 }
             }
         }
     }
-    //Code for Language toggle ends //  
-
 });
