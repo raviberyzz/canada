@@ -19,6 +19,7 @@ import com.day.cq.search.result.SearchResult;
 
 import org.apache.sling.api.resource.*;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Modified;
@@ -115,22 +116,12 @@ public class CDCPWorkflowStep implements WorkflowProcess {
 					continue;
 				}
 
-				JSONObject jsonObjectEn = new JSONObject();
-				JSONObject jsonObjectFr = new JSONObject();
 				//Check for pdf's that end with -e and -f to differentiate between english and french
 				if(asset.getName().endsWith("-e.pdf")){
-					jsonObjectEn.put("name", asset.getName());
-					jsonObjectEn.put("title",asset.getMetadataValue(DamConstants.DC_TITLE));
-					jsonObjectEn.put("province",asset.getMetadataValue(CDCP_PROVINCE));
-					jsonObjectEn.put("year", asset.getMetadataValue(CDCP_YEAR));
-					jsonArrayEn.put(jsonObjectEn);
+					jsonArrayEn.put(createJsonObject(asset, false));
 				}
 				else if(asset.getName().endsWith("-f.pdf")){
-					jsonObjectFr.put("name", asset.getName());
-					jsonObjectFr.put("title",asset.getMetadataValue(DamConstants.DC_TITLE));
-					jsonObjectFr.put("province",provinceMapping.getFrenchNameFromEnglish(asset.getMetadataValue(CDCP_PROVINCE)));
-					jsonObjectFr.put("year", asset.getMetadataValue(CDCP_YEAR));
-					jsonArrayFr.put(jsonObjectFr);
+					jsonArrayFr.put(createJsonObject(asset, true));
 				}
 			}
 
@@ -148,11 +139,20 @@ public class CDCPWorkflowStep implements WorkflowProcess {
 
 
 		}catch(RepositoryException e){
-			log.error("Repository Exception : {}", e.getMessage());
+			log.error("Repository Exception :", e);
 		} catch (Exception e){
-			log.error("Exception: {}", e.getMessage());
+			log.error("Exception:", e);
 		}
 
+	}
+
+	private JSONObject createJsonObject(Asset asset, boolean isFrench) throws JSONException {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("name", asset.getName());
+		jsonObject.put("title",asset.getMetadataValue(DamConstants.DC_TITLE));
+		jsonObject.put("province", isFrench ? provinceMapping.getFrenchNameFromEnglish(asset.getMetadataValue(CDCP_PROVINCE)) : asset.getMetadataValue(CDCP_PROVINCE));
+		jsonObject.put("year", asset.getMetadataValue(CDCP_YEAR));
+		return jsonObject;
 	}
 
     //Access to repo using service user
