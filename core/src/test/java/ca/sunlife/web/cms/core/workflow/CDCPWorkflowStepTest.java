@@ -5,9 +5,13 @@ import javax.jcr.Session;
 
 
 import com.adobe.granite.asset.api.AssetManager;
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.DamConstants;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import org.apache.sling.api.resource.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,6 +58,9 @@ public class CDCPWorkflowStepTest {
     @Mock
     private AssetManager assetManager;
 
+    @Mock
+    private Asset asset;
+
     @InjectMocks
     private CDCPWorkflowStep workflowStep;
 
@@ -86,4 +93,27 @@ public class CDCPWorkflowStepTest {
         // Execute the method
         assertDoesNotThrow(() -> workflowStep.execute(mock(WorkItem.class), mock(WorkflowSession.class), mock(MetaDataMap.class)));
     }
+
+    @Test
+    void testCreateJsonObject() throws JSONException {
+        //Mock Data
+        String assetName = "test.pdf";
+        String dcTitle = "Test Title";
+        String province = "Ontario";
+        String year = "2024";
+
+        when(asset.getName()).thenReturn(assetName);
+        when(asset.getMetadataValue(DamConstants.DC_TITLE)).thenReturn(dcTitle);
+        when(asset.getMetadataValue("dam:cdcp-province")).thenReturn(province);
+        when(asset.getMetadataValue("dam:cdcp-year")).thenReturn(year);
+
+        JSONObject jsonObject = workflowStep.createJsonObject(asset,false);
+
+        assertEquals(assetName, jsonObject.getString("name"));
+        assertEquals(dcTitle, jsonObject.getString("title"));
+        assertEquals(province, jsonObject.getString("province"));
+        assertEquals(year, jsonObject.getString("year"));
+
+    }
+
 }
