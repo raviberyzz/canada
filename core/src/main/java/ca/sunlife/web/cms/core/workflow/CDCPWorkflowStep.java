@@ -146,7 +146,7 @@ public class CDCPWorkflowStep implements WorkflowProcess {
 
 	}
 
-	private JSONObject createJsonObject(Asset asset, boolean isFrench) throws JSONException {
+	protected JSONObject createJsonObject(Asset asset, boolean isFrench) throws JSONException {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("name", asset.getName());
 		jsonObject.put("title",asset.getMetadataValue(DamConstants.DC_TITLE));
@@ -156,7 +156,7 @@ public class CDCPWorkflowStep implements WorkflowProcess {
 	}
 
     //Access to repo using service user
-	private ResourceResolver getResourceResolver() throws LoginException {
+	protected ResourceResolver getResourceResolver() throws LoginException {
 		return resolverFactory.getServiceResourceResolver(
 				Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, CDCP_SERVICE));
 	}
