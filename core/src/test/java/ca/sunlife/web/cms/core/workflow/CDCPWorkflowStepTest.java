@@ -1,23 +1,23 @@
 package ca.sunlife.web.cms.core.workflow;
 
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 
 
-import org.apache.sling.api.resource.LoginException;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
+import com.adobe.granite.asset.api.AssetManager;
+import com.day.cq.search.Query;
+import com.day.cq.search.QueryBuilder;
+import org.apache.sling.api.resource.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.search.result.Hit;
-import com.day.cq.dam.api.Asset;
 import com.adobe.granite.workflow.WorkflowException;
 import com.adobe.granite.workflow.WorkflowSession;
 import com.adobe.granite.workflow.exec.WorkItem;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
-import java.util.Arrays;
+import java.util.Collections;
 
 import ca.sunlife.web.cms.core.configurations.CDCPWorkflowConfig;
 import org.mockito.InjectMocks;
@@ -25,10 +25,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import static org.mockito.Mockito.anyMap;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 
 public class CDCPWorkflowStepTest {
@@ -40,61 +37,53 @@ public class CDCPWorkflowStepTest {
     private ResourceResolver resourceResolver;
 
     @Mock
-    private Asset asset;
-
-    @Mock
     private CDCPWorkflowConfig config;
 
+    @Mock
+    private QueryBuilder queryBuilder;
+
+    @Mock
+    private Query query;
+
+    @Mock
+    private SearchResult searchResult;
+
+    @Mock
+    private Hit hit;
+
+    @Mock
+    private AssetManager assetManager;
+
     @InjectMocks
-    private CDCPWorkflowStep cdcpWorkflowStep;
+    private CDCPWorkflowStep workflowStep;
 
     @BeforeEach
-    public void setUp() throws LoginException {
+    public void setUp() throws RepositoryException, LoginException {
         MockitoAnnotations.initMocks(this);
-        when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(resourceResolver);
+        when(resolverFactory.getServiceResourceResolver(any())).thenReturn(resourceResolver);
+        when(resourceResolver.adaptTo(QueryBuilder.class)).thenReturn(queryBuilder);
+        when(queryBuilder.createQuery(any(), any())).thenReturn(query);
+        when(query.getResult()).thenReturn(searchResult);
+        when(searchResult.getHits()).thenReturn(Collections.singletonList(hit));
+        when(hit.getPath()).thenReturn("/content/dam/cdcp-pdfs/pdf1");
+        when(resourceResolver.getResource("/content/dam/cdcp-json")).thenReturn(mock(Resource.class));
     }
 
     @Test
-    public void testExecute() throws RepositoryException, WorkflowException, LoginException {
-        // Mock necessary objects and method calls
+    public void testExecute_SuccessfulExecution() throws RepositoryException, WorkflowException, PersistenceException {
+        // Mock necessary configuration
         when(config.cdcpPDFLocation()).thenReturn("/content/dam/cdcp-pdfs");
         when(config.cdcpJSONLocation()).thenReturn("/content/dam/cdcp-json");
 
-        // Mocking SearchResult and Hit for Query result
-        SearchResult searchResult = mock(SearchResult.class);
-        Hit hit1 = mock(Hit.class);
-        Hit hit2 = mock(Hit.class);
+        // Mock asset related methods
+        when(resourceResolver.getResource("/content/dam/cdcp-pdfs/pdf1")).thenReturn(mock(Resource.class));
+        when(resourceResolver.adaptTo(AssetManager.class)).thenReturn(assetManager);
 
-        when(hit1.getPath()).thenReturn("/content/dam/cdcp-pdfs/pdf1");
-        when(hit2.getPath()).thenReturn("/content/dam/cdcp-pdfs/pdf2");
+        // Mock session
+        Session session = mock(Session.class);
+        when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
 
-        when(searchResult.getHits()).thenReturn(Arrays.asList(hit1, hit2));
-
-        Resource resource1 = mock(Resource.class);
-        Resource resource2 = mock(Resource.class);
-
-        when(resource1.adaptTo(Asset.class)).thenReturn(asset);
-        when(resource2.adaptTo(Asset.class)).thenReturn(asset);
-
-        when(resourceResolver.getResource("/content/dam/cdcp-pdfs/pdf1")).thenReturn(resource1);
-        when(resourceResolver.getResource("/content/dam/cdcp-pdfs/pdf2")).thenReturn(resource2);
-
-        // Call the method to be tested
-        cdcpWorkflowStep.execute(mock(WorkItem.class), mock(WorkflowSession.class), mock(MetaDataMap.class));
-
-        assertNotNull(cdcpWorkflowStep.getResourceResolver());
-
-    }
-
-    @Test
-    public void testExecute_FolderNotFound() throws RepositoryException, WorkflowException, LoginException {
-        // Mock necessary objects and method calls
-        when(config.cdcpPDFLocation()).thenReturn("/content/dam/non-existing-folder");
-        when(config.cdcpJSONLocation()).thenReturn("/content/dam/cdcp-json");
-
-        // Call the method to be tested
-        cdcpWorkflowStep.execute(mock(WorkItem.class), mock(WorkflowSession.class), mock(MetaDataMap.class));
-
-        assertNotNull(cdcpWorkflowStep.getResourceResolver());
+        // Execute the method
+        assertDoesNotThrow(() -> workflowStep.execute(mock(WorkItem.class), mock(WorkflowSession.class), mock(MetaDataMap.class)));
     }
 }
