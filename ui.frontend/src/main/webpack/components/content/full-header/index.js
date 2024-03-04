@@ -195,14 +195,6 @@ $(document).ready(function () {
         $('#sun-language').on('shown.bs.collapse', function (e) {
             $(this).find(".fa-remove").focus();
         });
-        var liEle = $("#sun-language .content-language li").last()[0];
-        var finalAnchorEle = $(liEle).find('a:first');
-        $(finalAnchorEle).on('focusout', function (e) {
-            // Close this sub menu
-            $("#language-btn").trigger("click");
-            $("#language-btn").focus();
-            return false;
-        });
     }
 
     // top margin for all pages in mobile & tablet view

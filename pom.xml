@@ -19,7 +19,7 @@
     <groupId>ca.sunlife.web.cms</groupId>
     <artifactId>web-cms-aem-ca</artifactId>
     <packaging>pom</packaging>
-    <version>2.30.0-SNAPSHOT</version>
+    <version>2.69.0-SNAPSHOT</version>
     <name>CMS AEM ca application project</name>
     <description>CMS AEM ca application project</description>
 
@@ -52,8 +52,8 @@
 		<vault.dev.user>admin</vault.dev.user>
 		<vault.dev.password>sunlifedev</vault.dev.password>
         <frontend-maven-plugin.version>1.12.0</frontend-maven-plugin.version>
-        <core.wcm.components.version>2.8.0</core.wcm.components.version>
-
+        <core.wcm.components.version>2.22.12</core.wcm.components.version>
+	
         <bnd.version>5.1.2</bnd.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -742,7 +742,7 @@ Bundle-DocURL:
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.5.13</version>
+                <version>6.5.17</version>
                 <scope>provided</scope>
             </dependency>
             <!-- Apache Sling Dependencies -->
