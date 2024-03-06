@@ -618,6 +618,130 @@
                                         typeHint="Date"
                                         visibilityCascading="default"/>
                                 </offime>
+                                <_x0031_707437164516
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="dam/gui/components/admin/schemafield"
+                                        emptyText="Select Option"
+                                        fieldLabel="CDCP Year"
+                                        name="./jcr:content/metadata/dam:cdcp-year"
+                                        resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
+                                    <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            choicesCascading="default"
+                                            cq-msm-lockable="./metadata/dam:cdcp-year"
+                                            metaType="dropdown"
+                                            requiredCascading="always"
+                                            visibilityCascading="default"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <_x0031_707437180803
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2023"
+                                                value="2023"/>
+                                        <_x0031_707437185421
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2024"
+                                                value="2024"/>
+                                        <_x0031_707437191475
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2025"
+                                                value="2025"/>
+                                        <_x0031_707443541750
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2026"
+                                                value="2026"/>
+                                        <_x0031_707443542573
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2027"
+                                                value="2027"/>
+                                        <_x0031_707443542889
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2028"
+                                                value="2028"/>
+                                        <_x0031_707443543121
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2029"
+                                                value="2029"/>
+                                        <_x0031_707443543333
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2030"
+                                                value="2030"/>
+                                    </items>
+                                    <cascadeitems
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/cascadeitems"/>
+                                </_x0031_707437164516>
+                                <_x0031_707437166919
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="dam/gui/components/admin/schemafield"
+                                        emptyText="Select Option"
+                                        fieldLabel="CDCP Province"
+                                        name="./jcr:content/metadata/dam:cdcp-province"
+                                        resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
+                                    <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            choicesCascading="default"
+                                            cq-msm-lockable="./metadata/dam:cdcp-province"
+                                            metaType="dropdown"
+                                            requiredCascading="always"
+                                            visibilityCascading="default"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <_x0031_707437210157
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Alberta"
+                                                value="Alberta"/>
+                                        <_x0031_707437220108
+                                                jcr:primaryType="nt:unstructured"
+                                                text="British Columbia"
+                                                value="British Columbia"/>
+                                        <_x0031_707437241074
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Manitoba"
+                                                value="Manitoba"/>
+                                        <_x0031_707437269249
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New Brunswick"
+                                                value="New Brunswick"/>
+                                        <_x0031_707437284809
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Newfoundland and Labrador"
+                                                value="Newfoundland and Labrador"/>
+                                        <_x0031_707437285824
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Northwest Territories"
+                                                value="Northwest Territories"/>
+                                        <_x0031_707437285985
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Nova Scotia"
+                                                value="Nova Scotia"/>
+                                        <_x0031_707437286158
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Nunavut"
+                                                value="Nunavut"/>
+                                        <_x0031_707437286277
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Ontario"
+                                                value="Ontario"/>
+                                        <_x0031_707437317759
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Prince Edward Island"
+                                                value="Prince Edward Island"/>
+                                        <_x0031_707437321180
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Quebec"
+                                                value="Quebec"/>
+                                        <_x0031_707443504725
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Saskatchewan"
+                                                value="Saskatchewan"/>
+                                        <_x0031_707443518469
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yukon"
+                                                value="Yukon"/>
+                                    </items>
+                                    <cascadeitems
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/cascadeitems"/>
+                                </_x0031_707437166919>
                             </items>
                         </col2>
                         <col3
@@ -1872,161 +1996,6 @@
                         </col2>
                     </items>
                 </tab5>
-                <tab6
-                    granite:rel="aem-assets-metadata-form-tab"
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="CDCP"
-                    sling:resourceType="granite/ui/components/coral/foundation/container"
-                    listOrder="5">
-                    <granite:data
-                        jcr:primaryType="nt:unstructured"
-                        tabid="14d06e7a-9d05-4d42-b7fb-4d88c902e1ba"/>
-                    <items jcr:primaryType="nt:unstructured">
-                        <col1
-                            granite:rel="aem-assets-metadata-form-column"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                            listOrder="0"
-                            oice-options="on">
-                            <items jcr:primaryType="nt:unstructured">
-                                <_x0031_707437164516
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="dam/gui/components/admin/schemafield"
-                                    emptyText="Select Option"
-                                    fieldLabel="Year"
-                                    name="./jcr:content/metadata/dam:cdcp-year"
-                                    resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
-                                    <granite:data
-                                        jcr:primaryType="nt:unstructured"
-                                        choicesCascading="default"
-                                        cq-msm-lockable="./metadata/dam:cdcp-year"
-                                        metaType="dropdown"
-                                        requiredCascading="always"
-                                        visibilityCascading="default"/>
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <_x0031_707437180803
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2023"
-                                            value="2023"/>
-                                        <_x0031_707437185421
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2024"
-                                            value="2024"/>
-                                        <_x0031_707437191475
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2025"
-                                            value="2025"/>
-                                        <_x0031_707443541750
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2026"
-                                            value="2026"/>
-                                        <_x0031_707443542573
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2027"
-                                            value="2027"/>
-                                        <_x0031_707443542889
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2028"
-                                            value="2028"/>
-                                        <_x0031_707443543121
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2029"
-                                            value="2029"/>
-                                        <_x0031_707443543333
-                                            jcr:primaryType="nt:unstructured"
-                                            text="2030"
-                                            value="2030"/>
-                                    </items>
-                                    <cascadeitems
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/cascadeitems"/>
-                                </_x0031_707437164516>
-                                <_x0031_707437166919
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="dam/gui/components/admin/schemafield"
-                                    emptyText="Select Option"
-                                    fieldLabel="Province"
-                                    name="./jcr:content/metadata/dam:cdcp-province"
-                                    resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
-                                    <granite:data
-                                        jcr:primaryType="nt:unstructured"
-                                        choicesCascading="default"
-                                        cq-msm-lockable="./metadata/dam:cdcp-province"
-                                        metaType="dropdown"
-                                        requiredCascading="always"
-                                        visibilityCascading="default"/>
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <_x0031_707437210157
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Alberta"
-                                            value="Alberta"/>
-                                        <_x0031_707437220108
-                                            jcr:primaryType="nt:unstructured"
-                                            text="British Columbia"
-                                            value="British Columbia"/>
-                                        <_x0031_707437241074
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Manitoba"
-                                            value="Manitoba"/>
-                                        <_x0031_707437269249
-                                            jcr:primaryType="nt:unstructured"
-                                            text="New Brunswick"
-                                            value="New Brunswick"/>
-                                        <_x0031_707437284809
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Newfoundland and Labrador"
-                                            value="Newfoundland and Labrador"/>
-                                        <_x0031_707437285824
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Northwest Territories"
-                                            value="Northwest Territories"/>
-                                        <_x0031_707437285985
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Nova Scotia"
-                                            value="Nova Scotia"/>
-                                        <_x0031_707437286158
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Nunavut"
-                                            value="Nunavut"/>
-                                        <_x0031_707437286277
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Ontario"
-                                            value="Ontario"/>
-                                        <_x0031_707437317759
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Prince Edward Island"
-                                            value="Prince Edward Island"/>
-                                        <_x0031_707437321180
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Quebec"
-                                            value="Quebec"/>
-                                        <_x0031_707443504725
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Saskatchewan"
-                                            value="Saskatchewan"/>
-                                        <_x0031_707443518469
-                                            jcr:primaryType="nt:unstructured"
-                                            text="Yukon"
-                                            value="Yukon"/>
-                                    </items>
-                                    <cascadeitems
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/cascadeitems"/>
-                                </_x0031_707437166919>
-                            </items>
-                        </col1>
-                        <col2
-                            granite:rel="aem-assets-metadata-form-column"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                            listOrder="1"/>
-                        <col3
-                            granite:rel="aem-assets-metadata-form-column"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                            listOrder="2"/>
-                    </items>
-                </tab6>
             </items>
         </tabs>
     </items>
