@@ -1,62 +1,59 @@
 package ca.sunlife.web.cms.core.workflow;
 
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-
-
-import com.adobe.granite.asset.api.AssetManager;
+import ca.sunlife.web.cms.core.configurations.CDCPWorkflowConfig;
+import com.adobe.granite.workflow.WorkflowSession;
+import com.adobe.granite.workflow.exec.WorkItem;
+import com.adobe.granite.workflow.metadata.MetaDataMap;
+import com.adobe.granite.workflow.metadata.SimpleMetaDataMap;
 import com.day.cq.dam.api.Asset;
-import com.day.cq.dam.api.DamConstants;
+import com.day.cq.dam.api.AssetManager;
+import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
-import org.apache.sling.api.resource.*;
+import com.day.cq.search.result.SearchResult;
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import junitx.util.PrivateAccessor;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.day.cq.search.result.SearchResult;
-import com.day.cq.search.result.Hit;
-import com.adobe.granite.workflow.WorkflowException;
-import com.adobe.granite.workflow.WorkflowSession;
-import com.adobe.granite.workflow.exec.WorkItem;
-import com.adobe.granite.workflow.metadata.MetaDataMap;
-import java.util.Collections;
-
-import ca.sunlife.web.cms.core.configurations.CDCPWorkflowConfig;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+import com.day.cq.dam.api.DamConstants;
 
-import static org.junit.jupiter.api.Assertions.*;
+import javax.jcr.Session;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-
+@ExtendWith(AemContextExtension.class)
+@ExtendWith(MockitoExtension.class)
 public class CDCPWorkflowStepTest {
+    private final AemContext context = new AemContext(ResourceResolverType.JCR_MOCK);
+
+    @Mock
+    private WorkflowSession workflowSession;
+
+    @Mock
+    private WorkItem workItem;
 
     @Mock
     private ResourceResolverFactory resolverFactory;
 
-    @Mock
-    private ResourceResolver resourceResolver;
+    private final MetaDataMap metaData = new SimpleMetaDataMap();
 
-    @Mock
-    private CDCPWorkflowConfig config;
-
-    @Mock
-    private QueryBuilder queryBuilder;
-
-    @Mock
-    private Query query;
-
-    @Mock
-    private SearchResult searchResult;
-
-    @Mock
-    private Hit hit;
-
-    @Mock
-    private AssetManager assetManager;
+    @InjectMocks
+    private CDCPWorkflowStep cdcpWorkflowStep;
 
     @Mock
     private Asset asset;
@@ -64,34 +61,47 @@ public class CDCPWorkflowStepTest {
     @InjectMocks
     private CDCPWorkflowStep workflowStep;
 
+    private static final String CDCP_SERVICE = "cdcp-service";
+
     @BeforeEach
-    public void setUp() throws RepositoryException, LoginException {
-        MockitoAnnotations.initMocks(this);
-        when(resolverFactory.getServiceResourceResolver(any())).thenReturn(resourceResolver);
-        when(resourceResolver.adaptTo(QueryBuilder.class)).thenReturn(queryBuilder);
-        when(queryBuilder.createQuery(any(), any())).thenReturn(query);
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getHits()).thenReturn(Collections.singletonList(hit));
-        when(hit.getPath()).thenReturn("/content/dam/cdcp-pdfs/pdf1");
-        when(resourceResolver.getResource("/content/dam/cdcp-json")).thenReturn(mock(Resource.class));
+    public void setup(AemContext context) throws Exception {
     }
 
     @Test
-    public void testExecute_SuccessfulExecution() throws RepositoryException, WorkflowException, PersistenceException {
+    public void testExectute() throws Exception {
         // Mock necessary configuration
-        when(config.cdcpPDFLocation()).thenReturn("/content/dam/cdcp-pdfs");
-        when(config.cdcpJSONLocation()).thenReturn("/content/dam/cdcp-json");
+        ResourceResolver resourceResolver = mock(ResourceResolver.class);
+        when(resolverFactory.getServiceResourceResolver(
+                Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, CDCP_SERVICE))).thenReturn(resourceResolver);
 
         // Mock asset related methods
-        when(resourceResolver.getResource("/content/dam/cdcp-pdfs/pdf1")).thenReturn(mock(Resource.class));
-        when(resourceResolver.adaptTo(AssetManager.class)).thenReturn(assetManager);
+        AssetManager assetManager = mock(AssetManager.class);
+        lenient().when(resourceResolver.adaptTo(AssetManager.class)).thenReturn(assetManager);
 
-        // Mock session
+        CDCPWorkflowConfig config = mock(CDCPWorkflowConfig.class);
+        PrivateAccessor.setField(CDCPWorkflowStep.class, "config", config);
+        lenient().when(config.cdcpPDFLocation()).thenReturn("/pdfLocation");
+        lenient().when(config.cdcpJSONLocation()).thenReturn("/JSONLocation");
+
+        Resource cdcpAppResource = mock(Resource.class);
+        lenient().when(resourceResolver.getResource("/JSONLocation")).thenReturn(cdcpAppResource);
+        
+        QueryBuilder queryBuilder = mock(QueryBuilder.class);
         Session session = mock(Session.class);
-        when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
 
-        // Execute the method
-        assertDoesNotThrow(() -> workflowStep.execute(mock(WorkItem.class), mock(WorkflowSession.class), mock(MetaDataMap.class)));
+        lenient().when(resourceResolver.adaptTo(QueryBuilder.class)).thenReturn(queryBuilder);
+        lenient().when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
+
+        Query query = mock(Query.class);
+        Map<String, String> qm = new HashMap<String, String>();
+
+        lenient().when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).thenReturn(query);
+
+        SearchResult cdcpResult = mock(SearchResult.class);
+        lenient().when(query.getResult()).thenReturn(cdcpResult);
+
+
+        cdcpWorkflowStep.execute(workItem, workflowSession, metaData);
     }
 
     @Test
@@ -115,5 +125,4 @@ public class CDCPWorkflowStepTest {
         assertEquals(year, jsonObject.getString("year"));
 
     }
-
 }
