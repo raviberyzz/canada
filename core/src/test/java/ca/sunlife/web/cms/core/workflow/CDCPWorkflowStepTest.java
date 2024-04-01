@@ -33,6 +33,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -100,6 +101,8 @@ public class CDCPWorkflowStepTest {
         SearchResult cdcpResult = mock(SearchResult.class);
         lenient().when(query.getResult()).thenReturn(cdcpResult);
 
+        //Adding assertion
+        assertDoesNotThrow(() -> workflowStep.execute(mock(WorkItem.class), mock(WorkflowSession.class), mock(MetaDataMap.class)));
 
         cdcpWorkflowStep.execute(workItem, workflowSession, metaData);
     }
