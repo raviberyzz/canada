@@ -13,6 +13,14 @@
                 <ca jcr:primaryType="nt:unstructured">
                     <components jcr:primaryType="nt:unstructured">
                         <content jcr:primaryType="nt:unstructured">
+                            <ca-breadcrumb jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <breadcrumb
+                                        cq:policy="sunlife/ca/components/content/ca-breadcrumb/v1/breadcrumb/policy_breadcrumb_v1"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </ca-breadcrumb>
                             <ca-text
                                 cq:policy="sunlife/ca/components/content/ca-text/policy_text"
                                 jcr:primaryType="nt:unstructured"
@@ -32,7 +40,7 @@
                                 cq:policy="sunlife/ca/components/content/ca-container/policy_container"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
-							<ca-layout-container
+                            <ca-layout-container
                                 cq:policy="sunlife/ca/components/content/ca-layout-container/policy_layoutContainer"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
@@ -47,7 +55,7 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </ca-accordion>
-							<ca-tabs
+                            <ca-tabs
                                 cq:policy="sunlife/ca/components/content/ca-accordion/policy_tabs"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping">
@@ -58,11 +66,11 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </ca-tabs>
-							<ca-embed jcr:primaryType="nt:unstructured">
-								<v1 jcr:primaryType="nt:unstructured">
+                            <ca-embed jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
 								<embed cq:policy="sunlife/ca/components/content/ca-embed/v1/embed/policy_embed" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
-								</v1>
-							</ca-embed>
+                                </v1>
+                            </ca-embed>
                         </content>
                     </components>
                 </ca>
