@@ -69,10 +69,12 @@ public class CDCPWorkflowStepTest {
 
     @Test
     public void testExectute() throws Exception {
+        // Mock necessary configuration
         ResourceResolver resourceResolver = mock(ResourceResolver.class);
         when(resolverFactory.getServiceResourceResolver(
                 Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, CDCP_SERVICE))).thenReturn(resourceResolver);
 
+        // Mock asset related methods
         AssetManager assetManager = mock(AssetManager.class);
         lenient().when(resourceResolver.adaptTo(AssetManager.class)).thenReturn(assetManager);
 
@@ -83,7 +85,7 @@ public class CDCPWorkflowStepTest {
 
         Resource cdcpAppResource = mock(Resource.class);
         lenient().when(resourceResolver.getResource("/JSONLocation")).thenReturn(cdcpAppResource);
-
+        
         QueryBuilder queryBuilder = mock(QueryBuilder.class);
         Session session = mock(Session.class);
 
