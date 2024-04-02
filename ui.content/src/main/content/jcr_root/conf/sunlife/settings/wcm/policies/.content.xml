@@ -2645,6 +2645,22 @@
 							</embed>
 						</v1>
 					</ca-embed>
+					<ca-breadcrumb jcr:primaryType="nt:unstructured">
+                        <v1 jcr:primaryType="nt:unstructured">
+                            <breadcrumb jcr:primaryType="nt:unstructured">
+                                <policy_breadcrumb_v1
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Breadcrumb"
+                                    sling:resourceType="wcm/core/components/policy/policy"
+                                    disableShadowing="false"
+                                    hideCurrent="false"
+                                    showHidden="false"
+                                    startLevel="4">
+                                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                                </policy_breadcrumb_v1>
+                            </breadcrumb>
+                        </v1>
+                    </ca-breadcrumb>
                 </content>
                 <form jcr:primaryType="nt:unstructured">
                     <container jcr:primaryType="nt:unstructured">
