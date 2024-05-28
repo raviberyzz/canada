@@ -1,7 +1,7 @@
 {
   "name": "web-cms-aem-ca-archtyp-39",
   "version": "1.0.0",
-  "description": "Generates an AEM Frontend project with Webpack",
+  "description": "Generates an AEM Frontend project with Webpack for CA",
   "repository": {
     "type": "git",
     "url": ""
@@ -19,7 +19,7 @@
     "aemfed": "aemfed -t \"http://admin:admin@localhost:4504\" -w \"../ui.apps/src/main/content/jcr_root/\"",
     "watch": "npm-run-all --parallel start chokidar aemsyncro",
     "watchsync": "aemfed && watch",
-    "generate-clientlib":"node initiate.clientlib.generator.js",
+    "generate-clientlib": "node initiate.clientlib.generator.js",
     "build:clientlib": "npm run generate-clientlib",
     "deploy:local": "aemsync -t http://admin:admin@localhost:4504 -p ../ui.apps/",
     "build-and-deploy": "webpack --env dev --config ./webpack.local.js && npm run build:clientlib",
@@ -28,10 +28,12 @@
     "build": "npm run build-and-deploy"
   },
   "dependencies": {
+    "@sunlife/ui-components-react": "^1.0.1",
+    "@sunlife/ui-styles": "^1.0.1",
     "ab-datepicker": "^2.1.10",
-    "bootstrap": "^3.3.5",
+    "bootstrap": "^5.3.0",
     "hbs": "^4.0.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
