@@ -35,7 +35,18 @@
 							<ca-layout-container
                                 cq:policy="sunlife/ca/components/content/ca-layout-container/policy_layoutContainer"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/core/components/policies/mapping"/>     	
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                <ca-accordion
+                                        cq:policy="sunlife/ca/components/content/ca-accordion/policy_accordion"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping">
+                                    <v1 jcr:primaryType="nt:unstructured">
+                                        <accordion
+                                                cq:policy="sunlife/ca/components/content/ca-accordion/v1/accordion/policy_27140036200900"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </v1>
+                                </ca-accordion>
                         </content>                     
                     </components>
                 </ca>
