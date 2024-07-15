@@ -1,0 +1,6 @@
+{
+    "name": "ca-site-dependencies",
+    "categories": "sunlife.ca-site-dependencies",
+    "embed":"sunlife.core-vendor.jquery.v1,sunlife.core-vendor.bootstrap.v1, sunlife.core-vendor.v1",
+    "isExplicitModule": true
+}
